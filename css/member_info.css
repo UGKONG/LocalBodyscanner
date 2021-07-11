@@ -1,0 +1,2561 @@
+@charset "utf-8";
+
+
+/* Menu UnderBar */
+header > nav > ul > li:nth-of-type(2) > a:after{
+    display: block;
+}
+
+/* 뒤에 회색배경 */
+div.gray_div{
+    position: fixed; z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}
+
+
+/* CONTENT */
+.content > .top_sMenu{
+    display: flex;
+    align-items: center;
+    font-size: 24px; 
+    color: var(--main);
+    font-weight: 500;
+}
+.content > .top_sMenu > i{
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: .2s;
+}
+.content > .top_sMenu > i:hover{
+    color: var(--mainB);
+}
+#buy_ticket_btn{
+    position: absolute;
+    right: 232px;
+    top: 19px;
+    height: 36px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: rgb(131, 8, 212);
+    color: #fff;
+    border: 1px solid rgb(107, 5, 175);
+}
+#pw_change_btn{
+    position: absolute;
+    right: 104px;
+    top: 19px;
+    height: 36px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: rgb(233, 148, 20);
+    color: #fff;
+    border: 1px solid rgb(255, 155, 5);
+}
+#pw_change_frm{
+    position: fixed;
+    width: 250px;
+    height: 350px;
+    background-color: #fff;
+    z-index: 999999999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 4px solid var(--mainW);
+    border-radius: 8px;
+    /* display: none; */
+}
+#pw_change_frm > h2{
+    font-size: 18px;
+    padding: 6px 8px 8px;
+    background-color: var(--mainW);
+    font-weight: 500;
+    color: #fff;
+}
+#pw_change_frm > p{
+    width: 180px;
+    margin: 20px auto;
+}
+#pw_change_frm > p > label{
+    font-size: 14px;
+    text-align: left;
+}
+#pw_change_frm > p > label+input{
+    width: 100%;
+    height: 30px;
+    margin-top: 4px;
+    border: 1px solid var(--mainW);
+    border-radius: 2px;
+    transition: .1s;
+    outline: 0;
+    padding: 0 8px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+#pw_change_frm > p > label+input:focus{
+    border: 2px solid var(--mainW);
+}
+#pw_change_frm > p:last-of-type{
+    text-align: center;
+}
+#pw_change_frm > p > button{
+    width: 40%;
+    padding: 3px 0;
+    font-size: 12px;
+    margin: 0 2px;
+    border: 1px solid var(--mainW);
+    color: #111;
+}
+#pw_change_frm > p > button:first-of-type{
+    background-color: var(--mainW);
+    color: #fff;
+}
+#member_del{
+    position: absolute;
+    right: 14px;
+    top: 19px;
+    height: 36px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: rgb(230, 62, 62);
+    color: #fff;
+    border: 1px solid rgb(255, 5, 5);
+}
+.content > div.up{width: 100%; height: 180px;}
+.content > div.up > div.u_img{
+    width: 25%; height: 100%; float: right;
+    display: flex; align-items: center;
+    justify-content: center; position: relative;
+    padding-top: 40px;
+}
+.content > div.up > div.u_img > img{
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.content > div.up > div.u_img > img.active{
+    position: fixed;
+    z-index: 999999999;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+.content > div.up > div.u_img > input{width: 0; height: 0;}
+.content > div.up > div.u_img > label{
+    position: absolute;
+    width: 180px; height: 180px; display: flex;
+    justify-content: center; align-items: center;
+    background-color: rgba(65, 65, 65, 0.61);
+    border-radius: 50%; color: #eee; opacity: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer; transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.content > div.up > div.u_img > label:hover{
+    opacity: 1;
+}
+.content > div.up > div.u_img > label > div{
+    width: 50px;
+    height: 50px;
+    bottom: -10px;
+    right: -10px;
+    position: absolute;
+    background-color: rgba(65, 65, 65, 0.61);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content > div.up > div.u_img > label > i{
+    display: inline-block;
+    margin-right: 6px;
+}
+.content > div.up > div.info_s{
+    width: 75%; height: 100%; float: left;
+    display: flex; justify-content: center;
+    flex-wrap: wrap; align-items: center;
+    align-content: center; padding-top: 28px;
+    padding-left: 100px;
+}
+.content > div.up > div.info_s > p{
+    width: 33.3333%; height: 50px; margin-top: 24px;
+    position: relative; font-size: 18px;
+}
+.content > div.up > div.info_s > p::before{
+    position: absolute; left: 0; top: -30px;text-indent: 26px;
+    font-size: 16px; font-weight: 700; letter-spacing: 2px;
+}
+.content > div.up > div.info_s > p.u_name::before{content: '이름';}
+.content > div.up > div.info_s > p.u_gender::before{content: '성별';}
+.content > div.up > div.info_s > p.u_num::before{content: '연락처';}
+.content > div.up > div.info_s > p.u_year::before{content: '생년월일';}
+.content > div.up > div.info_s > p.u_center::before{content: '센터';}
+.content > div.up > div.info_s > p.u_email::before{content: '이메일';}
+
+.content > div.up > div.info_s > p > i{
+    position: absolute;left: 0;top: -26px;
+}
+.content > div.up > div.info_s > p > button{
+    position: absolute;
+    top: -28px;
+    width: 30px;
+    height: 20px;
+    left: 0;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #aaa;
+    font-size: 12px;
+    line-height: 10px;
+    background-color: #aaa;
+    color: #fff;
+    outline: none;
+}
+.content > div.up > div.info_s > p > button:active{
+    background-color: #999;
+}
+.content > div.up > div.info_s > p > button.save{
+    background-color: var(--mainW);
+    border: 1px solid var(--main);
+}
+.content > div.up > div.info_s > p > button.save:active{
+    background-color: var(--main);
+}
+.content > div.up > div.info_s > p.u_name > button,
+.content > div.up > div.info_s > p.u_gender > button,
+.content > div.up > div.info_s > p.u_center > button{
+    left: 70px;
+}
+.content > div.up > div.info_s > p.u_num > button,
+.content > div.up > div.info_s > p.u_email > button{
+    left: 88px;
+}
+.content > div.up > div.info_s > p.u_year > button{
+    left: 104px;
+}
+.content > div.up > div.info_s > p > span.editForm{
+    display: none;
+}
+.content > div.up > div.info_s > p > span.editForm > input,
+.content > div.up > div.info_s > p > span.editForm > select{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 5px;
+    color: #333;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+
+/* 상세정보 */
+.content > div.down{
+    border-top: 1px solid var(--mainW);
+    margin-top: 50px; position: relative;
+}
+.content > div.down > div.tab_btn{
+    position: absolute;
+    width: 25%;height: 44px;
+    top: -44px; left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.content > div.down > div.tab_btn > button{
+    width: 150px; height: 100%; font-size: 14px;
+    letter-spacing: 1px; font-weight: 400; color: var(--mainW);
+    position: relative; outline: 0; z-index: 2;
+    border: 1px solid var(--mainW);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fff;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-top-width: 0;
+}
+/* 활성화 */
+.content > div.down > div.tab_btn > button.active{
+    background-color: #fff; color: var(--mainW);
+    font-size: 16px; letter-spacing: 2px;
+    z-index: 3; font-weight: 700;
+    border-bottom: 0;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-width: 1px;
+}
+div.tab_btn > button:first-of-type{margin-left: 10px;}
+
+
+
+/* 회원정보 */
+.tabContainer > article{
+    display: flex;
+    justify-content: space-around;
+}
+.tabContainer > article > div{
+    /* min-width: 500px; */
+    width: 90%;
+    max-width: 600px;
+    height: 500px;
+    border: 1px solid var(--mainW);
+    border-radius: 4px;
+    margin: 20px 10px 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.tabContainer > article > div > h4{
+    font-size: 22px; font-weight: 400; 
+    height: 54px; line-height: 54px;
+    letter-spacing: 1px; padding: 0px 10px;
+    background-color: var(--mainW);
+    color: #fff;
+}
+.tabContainer > article > div > div.content{
+    padding: 0;
+    width: 100%;
+    height: calc(100% - 114px);
+    overflow: auto;
+}
+
+.tabContainer > article > div > div.content.x{
+    height: calc(100% - 53px);
+}
+
+/* CARD1 */
+.tabPage0 > div.card1 > div.content > table{
+    width: 100%;
+}
+.tabPage0 > div.card1 > div.content > table tr{
+    height: 34px; 
+}
+.tabPage0 > div.card1 > div.content > table th{
+    width: 100px; text-align: left; padding: 0 6px 0 10px;
+    font-size: 14px; font-weight: 400;
+}
+.tabPage0 > div.card1 > div.content > table td{
+    text-align: right; padding: 0 10px;
+}
+.tabPage0 > div.card1 > div.content > table td > select {
+    width: auto;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    color: #222;
+}
+.tabPage0 > div.card1 > div.content > table td > button{
+    padding: 4px 10px;
+    transition: background-color .1s;
+    border-radius: 3px; 
+    border: none;
+    background-color: var(--mainW); color: #fff;
+}
+.tabPage0 > div.card1 > div.content > table td > button:active{
+    background-color: var(--main);
+}
+.tabPage0 > div.card1 > div.content > table textarea{
+    width: 100%; height: 178px;
+    resize: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    padding: 6px; font-size: 14px;
+    background-color: #e9ecef;
+    color: #444;
+}
+.tabPage0 > div.card1 > div.content > table textarea.on{
+    background-color: #fff;
+    color: #000;
+}
+
+/* CARD2 */
+.tabContainer > article > div.card2 > div.content{
+    height: calc(100% - 54px);
+    position: relative
+}
+div.card2 > div.content > p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    font-weight: 500;
+    color: #666;
+    width: 400px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+div.card2 > div.content > article{
+    width: 90%; 
+    height: 140px;
+    margin: 14px auto;
+    border: 1px solid var(--mainW);
+    border-radius: 10px;
+    overflow: hidden; cursor: default;
+    background-color: rgba(230, 230, 230, 0.5);
+    transition: .3s; 
+    margin-top: 10px;
+    position: relative;
+}
+div.card2 > div.content > article.activeVoucher{
+    border: 2px solid var(--mainW);
+}
+div.card2 > div.content > article.stopVoucher{
+    border: 2px solid #f35666;
+}
+div.card2 > div.content > article > i{
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    padding: 6px;
+}
+div.card2 > div.content > article > i:hover{
+    color: #000;
+}
+div.card2 > div.content > article > div.optionBg{
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left .1s;
+}
+div.card2 > div.content > article > div.optionBg > div{
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    min-height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 13px;
+    cursor: pointer;
+    padding: 4px 0;
+    color: #333;
+}
+div.card2 > div.content > article > div.optionBg > div:hover{
+    background-color: rgb(248, 248, 248);
+    color: #000;
+}
+div.card2 > div.content > article > div.optionBg > div:active{
+    background-color: rgb(224, 224, 224);
+    color: #000;
+}
+div.card2 > div.content > article > div.optionBg > div > i{
+    font-size: 22px;
+    width: 100%;
+    margin-bottom: -8px;
+}
+
+div.card2 > div.content > article:hover{
+    transform: scale(1.02);
+}
+div.card2 > div.content > article > h5{
+    position: relative; height: 34px;
+    font-size: 18px; color: var(--mainW);
+    text-indent: 16px; line-height: 34px;
+    background-color: #fff;
+}
+div.card2 > div.content > article.lastVoucher > h5{
+    color: #666;
+}
+div.card2 > div.content > article.stopVoucher > h5{
+    color: #f35666;
+}
+div.card2 > div.content > article > h5 > span{
+    display: inline-block;
+    width: 2px; height: 56%;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    background-color: var(--mainW);
+    position: absolute;
+    left: 2px; top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+div.card2 > div.content > article.lastVoucher > h5 > span{
+    background-color: #666;
+}
+div.card2 > div.content > article.stopVoucher > h5 > span{
+    background-color: #f35666;
+}
+div.card2 > div.content > article > h5 > span:nth-of-type(2){
+    left: 6px;
+}
+div.card2 > div.content > article > h5 > p{
+    height: 34px; position: absolute;
+    top: 0; right: 16px;
+}
+div.card2 > div.content > article > div{
+    width: 100%; height: 100%;
+    padding: 6px 10px;
+}
+div.card2 > div.content > article > div > p:nth-of-type(1){
+    color: var(--mainW); font-weight: 700; font-size: 12px;
+}
+div.card2 > div.content > article.stopVoucher > div > p:nth-of-type(1){
+    color: #f35666;
+}
+div.card2 > div.content > article.lastVoucher > div > p:nth-of-type(1){
+    color: #666;
+}
+div.card2 > div.content > article > div > p:nth-of-type(2){
+    color: #000; font-size: 16px; font-weight: 400;
+}
+div.card2 > div.content > article.lastVoucher > div > p:nth-of-type(2){
+    color: #666;
+}
+div.card2 > div.content > article > div > p:nth-of-type(3){
+    font-size: 12px; margin-top: 10px; letter-spacing: 1px;
+}
+div.card2 > div.content > article.lastVoucher > div > p:nth-of-type(3){
+    color: #666;
+}
+
+
+/* CARD3 */
+div.card3 table{width: 100%; border-collapse: collapse;}
+div.card3 table tr{
+    height: 40px; 
+}
+div.card3 table tr td{
+    
+    overflow: hidden;
+}
+div.card3 table tr td > .wrap{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+div.card3 table tr td > .wrap > div{
+    height: 50%;
+    overflow: hidden;
+}
+div.card3 table tr td > .wrap > div.up{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+div.card3 table tr td > .wrap > div.up > p{
+    padding: 0 10px;
+}
+div.card3 table tr td > .wrap > div.up > p:first-of-type{
+    font-size: 15px;
+    font-weight: 500;
+}
+div.card3 table tr td > .wrap > div.up > p:last-of-type{
+    font-size: 14px;
+    color: #333;
+}
+div.card3 table tr td > .wrap > div.down{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 10px;
+    word-break: keep-all;
+}
+div.card3 table tr td{
+    font-size: 14px; 
+    color: #000000d8; 
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--mainW);
+}
+div.card3 table tr td > .wrap > div.down > span{
+    display: inline-block;
+    margin: 0 4px 0 0;
+    font-weight: 500;
+}
+div.card3 table tr td > .wrap > div .member{
+    color: rgb(202, 108, 1);
+}
+div.card3 table tr td > .wrap > div .trainer{
+    color: rgb(211, 50, 233);
+}
+div.card3 table tr td > .wrap > div .class{
+    color: #555;
+}
+div.card3 table tr td > .wrap > div .class::before{
+    content: '\'';
+}
+div.card3 table tr td > .wrap > div .class::after{
+    content: '\'';
+}
+
+/* 신체정보 */
+article.tabPage1 > div div.date_choice{
+    overflow: auto; margin-bottom: 0; padding: 4px 6px;
+    border-bottom: 1px solid var(--mainW);
+    position: relative;
+}
+article.tabPage1 > div div.date_choice > h5{
+    float: left;font-weight: 500;font-size: 16px;line-height: 52px; text-indent: 6px;
+}
+article.tabPage1 > div div.date_choice > button.WriteFrm_Btn{
+    width: 80px;
+    height: 36px;
+    border: 1px solid var(--mainW);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: var(--mainW);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    right: calc(40% + 10px);
+    transform: translateY(-50%);
+}
+article.tabPage1 > div div.date_choice > select{float: right;}
+article.tabPage1 > div select{
+    width: 40%; height: 36px; border: 1px solid var(--mainW);
+    font-size: 14px; font-weight: 700; border-radius: 6px;
+    -webkit-border-radius: 6px; -moz-border-radius: 6px;
+    -ms-border-radius: 6px; -o-border-radius: 6px;
+    text-indent: 0; padding: 6px; margin: 8px 0; 
+}
+article.tabPage1 > div table{width: 100%; border-collapse:collapse;}
+article.tabPage1 > div table tr{height: 25px;}
+article.tabPage1 > div table tr:nth-of-type(3){height: 40px;}
+article.tabPage1 > div table tr:first-of-type{height: 30px;}
+
+article.tabPage1 > div table tr{text-align: center;}
+
+
+article.tabPage1 > div table tr.tr_btn{border-bottom: none;}
+article.tabPage1 > div table tr.tr_btn+tr{border-bottom: none;}
+
+/* CARD4 */
+article.tabPage1 > div.card4 table th{width: 50%;height: 50px;}
+article.tabPage1 > div.card4 table td{text-align: center; position: relative;}
+
+article.tabPage1 > div.card4 table th,
+article.tabPage1 > div.card4 table td
+{border: 1px solid var(--mainWW);}
+article.tabPage1 > div.card4 table th:last-of-type,
+article.tabPage1 > div.card4 table td:last-of-type
+{border-right: 0;}
+article.tabPage1 > div.card4 table th:first-of-type,
+article.tabPage1 > div.card4 table td:first-of-type
+{border-left: 0;}
+article.tabPage1 > div.card4 table td label{
+    font-size: 14px;
+    display: inline-block;
+    width: 25px;
+}
+article.tabPage1 > div.card4 table td input{
+    width: 60%;
+    height: 30px;
+    border: 1px solid rgba(128,128,128,.5);
+    outline: 0;
+    padding: 0 5px;
+}
+article.tabPage1 > div.card4 table td input:focus{
+    border-width: 2px;
+}
+
+/* CARD5, CARD6 */
+article.tabPage1 > div.bodyinfo table th:nth-of-type(1),
+article.tabPage1 > div.bodyinfo table td:nth-of-type(1)
+{width: 20%; border-left: 0;}
+
+article.tabPage1 > div.bodyinfo table th:last-of-type,
+article.tabPage1 > div.bodyinfo table td:last-of-type
+{border-right: 0;}
+
+article.tabPage1 > div.bodyinfo table tr:first-of-type th
+{border-right: 0;}
+
+article.tabPage1 > div.bodyinfo table tr th.h25{
+    height: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 1px solid var(--mainWW);
+}
+
+article.tabPage1 table td.data{
+    letter-spacing: 1px;
+}
+article.tabPage1 > div.bodyinfo table th,
+article.tabPage1 > div.bodyinfo table td{
+    border: 1px solid var(--mainWW); 
+    width: 20%;
+    height: 62px;
+    position: relative;
+    font-size: 15px;
+}
+article.tabPage1 > div.bodyinfo table td div.dotted{
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    /* bottom: 4px; left: 50%; */
+    top: 50%; left: 5px;
+    transform: translateY(-50%);
+}
+article.tabPage1 > div.card4 table th{height: 55px;}
+article.tabPage1 > div.card4 table td{height: 62px;}
+
+article.tabPage1 > div.card4 table th{height: 55px;}
+article.tabPage1 > div.card5 table td{
+    position: relative;
+    /* padding-top: 6px; */
+    font-size: 16px;
+}
+
+article.tabPage1 > div.card6 table td > div.tableRows{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+article.tabPage1 > div.card6 table td > div.tableRows.down{
+    border-top: 1px solid var(--mainWW);
+}
+article.tabPage1 > div.card5 table td > span{
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+}
+article.tabPage1 > div.card5 table td > i{
+    /* position: absolute; */
+    top: 4px;
+    left: 4px;
+    color: #444;
+    font-size: 14px;
+    font-weight: 900;
+    display: inline-block;
+    margin: 0 1px;
+}
+
+article.tabPage1 > div.card5 table td#u_FRONT_HEAD_POSE          {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_SHOULDER_RIGHT_POSE{background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_SHOULDER_LEFT_POSE {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_PELVIS_RIGHT_POSE  {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_PELVIS_LEFT_POSE   {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_LEG_RIGHT_POSE     {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_FRONT_LEG_LEFT_POSE      {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_SIDE_HEAD_POSE           {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_SIDE_SHOULDER_POSE       {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_SIDE_PELVIS_POSE         {background-color: transparent;}
+article.tabPage1 > div.card5 table td#u_SIDE_LEG_POSE            {background-color: transparent;}
+
+
+article.tabPage1 > div.card5 table tr:last-of-type td{
+    padding: 0;
+}
+
+
+/* 버튼 */
+article.tabPage1 > div table td button{
+    width: 42%;
+    height: 36px;
+    border: 0;
+    font-size: 16px;
+    background-color: #adadad;
+    color: #fff;
+    transition: .3s;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+article.tabPage1 > div table td button:hover{
+    background-color: var(--mainW);
+}
+article.tabPage1 > div table tr.tr_btn td,
+article.tabPage1 > div table tr.tr_btn+tr td
+{border: 0;height: 80px;}
+article.tabPage1 > div table tr.tr_btn td button{
+    margin: 12px 4px;
+}
+
+/* COMING SOON */
+div.card7 > div.content{
+    display: flex; justify-content: center;align-items: center; flex-flow: column; text-align: center;
+}
+div.card7 img{width: 120px; display: block;}
+div.card7 p{font-size: 16px; font-weight: 700; color: var(--mainB);}
+article.tabPage1 > div.desa table{
+    table-layout: fixed;
+}
+article.tabPage1 > div.desa table th:nth-of-type(1),
+article.tabPage1 > div.desa table td:nth-of-type(1)
+{width: 20%; border-left: 0;}
+article.tabPage1 > div.desa table th:last-of-type,
+article.tabPage1 > div.desa table td:last-of-type
+{border-right: 0;}
+article.tabPage1 > div.desa table tr:first-of-type th
+{border-right: 0;}
+article.tabPage1 > div.desa table tr th.h25{
+    height: 0px;
+    font-size: 14px;
+    font-weight: 500;
+}
+article.tabPage1 > div.desa table th,
+article.tabPage1 > div.desa table td{
+    border: 1px solid var(--mainWW); 
+}
+article.tabPage1 > div.desa table th{width: 15%;height: 55px;}
+article.tabPage1 > div.desa table th:nth-of-type(1){
+    width: 35%;
+    max-width: 35%;
+    min-width: 35%;
+}
+article.tabPage1 > div.desa table th:nth-of-type(2){
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+}
+article.tabPage1 > div.desa table th:nth-of-type(3){
+    width: 35%;
+    max-width: 35%;
+    min-width: 35%;
+}
+article.tabPage1 > div.desa table td{font-size: 15px;}
+article.tabPage1 > div.desa table td{height: 31px; font-size: 13px;}
+article.tabPage1 > div.desa table tbody td:nth-of-type(4) > span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #222;
+    display: block;
+    margin: 0 auto;
+}
+article.tabPage1 > div.desa table tbody td:nth-of-type(4) > span.r{background-color: rgb(255,43,43);}
+article.tabPage1 > div.desa table tbody td:nth-of-type(4) > span.g{background-color: rgb(0,176,80);}
+article.tabPage1 > div.desa table tbody td:nth-of-type(4) > span.y{background-color: rgb(255,192,0);}
+
+
+/* POPUP */
+div.pop{
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(1.5);
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    border: 3px solid var(--mainW);
+    border-radius: 6px;
+    display: none;
+    overflow: hidden;
+}
+div.pop.chart{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 팝업 공통 */
+div.pop > h2{
+    padding: 6px 10px; font-weight: 400; color: #fff;
+    font-size: 18px; background-color: var(--mainW);
+    border-bottom: 1px solid var(--mainW);
+}
+div.pop > div.content{
+    padding: 10px;
+    overflow: auto;
+}
+div.pop > button{
+    float: right;
+    background-color: #f03245;
+    margin: 2px 10px 10px;
+    color: #fff;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    outline: 0;
+}
+div.pop > button:hover{
+    background-color: #d42738;
+}
+
+/* 신체정보자세히 */
+div.pop > div.content > article.pop1{
+    width: 1000px;
+}
+div.pop > div.content > article.pop1 > h3{
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--mainW);
+    margin-bottom: 10px;
+}
+div.pop > div.content > article.pop1 > div{height: 400px;}
+div.pop > div.content > article.pop1 > div.left{width: 30%;float: left;}
+
+div.pop > div.content > article.pop1 > div > h4{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    text-indent: 4px;
+}
+div.pop > div.content > article.pop1 > div > div.con{
+    border: 1px solid var(--mainW);
+    height: calc(100% - 38px);
+}
+div.pop > div.content > article.pop1 > div.left > div.con{
+    background-image: url(../img/inbody_body.png);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: auto 90%;
+    background-position: center;
+    position: relative;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div{
+    position: absolute;
+    text-align: center;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div.changeText1{
+    top: 40px;
+    left: 30px;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div.changeText2{
+    top: 60px;
+    right: 22px;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div.changeText3{
+    left: 20px;
+    bottom: 110px;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div.changeText4{
+    right: 30px;
+    bottom: 50px;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div > h5{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--mainB);
+    text-shadow: 0 2px 0 rgba(128,128,128,.1);
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div > p{
+    font-weight: 500;
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div > p.red{
+    color: rgb(247, 68, 23);
+}
+div.pop > div.content > article.pop1 > div.left > div.con > div > p.blue{
+    color: rgb(62, 62, 196);
+}
+
+div.pop > div.content > article.pop1 > div.right{
+    width: 67%;
+    float: right;
+    position: relative;
+}
+div.pop > div.content > article.pop1 > div.right > p{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+div.pop > div.content > article.pop1 > div.right > p > label{
+    font-size: 14px;
+    margin-right: 6px;
+}
+div.pop > div.content > article.pop1 > div.right > p > select{
+    width: 120px;
+    height: 34px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+div.pop > div.content > article.pop1 > div.right > .con{
+    padding: 14px 20px;
+    position: relative;
+}
+div.pop > div.content > article.pop1 > div.right > .con > div{
+    position: absolute;
+    top: 6px;
+    right: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.pop > div.content > article.pop1 > div.right > .con > div > p{
+    margin: 0 50px;
+    font-size: 13px;
+    color: #00000050;
+}
+div.pop > div.content > article.pop1 > div.right table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    position: relative;
+}
+
+div.pop > div.content > article.pop1 > div.right table th{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+div.pop > div.content > article.pop1 > div.right table td{
+    position: relative;
+    padding: 10px;
+}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2){
+    padding: 0;
+}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span{
+    width: 1px;
+    height: 8px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    background-color: rgba(128,128,128,.8);
+}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(1){left: 0; height: 15px;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(2){left: 16.666666%;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(3){left: 33.333333%;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(4){left: 49.999998%; height: 15px;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(5){left: 66.666664%;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(6){left: 83.333333%;}
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > span:nth-of-type(7){right: 0; height: 15px;}
+
+/* circle */
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > div.circle{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(236, 71, 65);
+    box-shadow: 0 2px 4px rgba(128,128,128,.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* bar */
+div.pop > div.content > article.pop1 > div.right table td:nth-of-type(2) > div.bar{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(128,128,128,.8);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+/* 신체정보변화도 */
+.inlinesparkline1,
+.inlinesparkline2{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+}
+div.pop > div.content > article.pop2{width: 900px;}
+div.pop > div.content > article.pop2 > div.btn{float: left;}
+div.pop > div.content > article.pop2 > div.part_btn{float: right;}
+div.pop > div.content > article.pop2 button{
+    padding: 4px 12px;
+    color: #212529;
+    background-color: #f8f9fa;
+    font-size: 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+div.pop > div.content > article.pop2 button.active{
+    background-color: var(--mainW); color: #fff;
+}
+/* 차트 */
+#myChart1, #myChart2, #myChart3{
+    width: 100%;
+    padding-top: 30px;
+}
+
+/* 체형정보자세히 */
+div.pop article.pop3 > div.info_btn{
+    width: 100%; height: 60px;
+    border: var(--mainW) 1px solid;
+}
+div.pop article.pop3 > button.errorBodyView{
+    width: 120px;
+    height: 35px;
+    font-size: 13.3333px;
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+    border-radius: 4px;
+    outline: 0;
+}
+div.pop article.pop3 > button.errorBodyView:active{
+    background-color: var(--main);
+}
+div.pop article.pop3 > div.info_btn > button{
+    width: 50%; height: 100%; float: left;
+    border: none; font-size: 20px;
+    font-weight: 400; letter-spacing: 1px;
+    outline: 0;
+}
+div.pop article.pop3 > div.info_btn > button.active{
+    background-color: var(--mainW); color: white;
+}
+div.pop article.pop3 > div.info{width: 984.69px;}
+div.pop article.pop3 > div.info > section{position: relative;}
+div.pop article.pop3 > div.info > section.pose_info{
+    display: flex;
+    display: none;
+    flex-wrap: wrap;
+}
+div.pop article.pop3 > div.info > section h4{
+    padding: 12px 6px; font-size: 17px; font-weight: 500;
+    width: 200px;
+}
+div.pop article.pop3 > div.info > section h4 > i{
+    font-weight: 600;
+}
+div.pop article.pop3 > div.info > section.pose_info > p{
+    position: absolute; right: 0;top: 0; padding: 10px 6px;
+    padding-right: 0;
+}
+div.pop article.pop3 > div.info > section.pose_info > p label{
+    font-size: 14px; margin-right: 4px;
+}
+div.pop article.pop3 > div.info > section.pose_info > div{
+    display: flex;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > div{
+    position: relative; overflow: hidden;
+    width: 184px; height: 280px; margin-right: 2px;
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    border: 1px solid var(--mainW);
+}
+
+#pose_date_del,#rom_date_del{
+    margin-left: 4px;
+    height: 34px;
+    padding: 0 10px;
+    background-color: #f03245;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+}
+#pose_date_del:hover,#rom_date_del:hover{
+    background-color: #d42738;
+}
+
+/* 정면사진 */
+div.pop article.pop3 > div.info > section.pose_info > div > div:first-of-type{
+    background-image: url(../img/Pose_Front.png);
+}
+/* 측면사진 */
+div.pop article.pop3 > div.info > section.pose_info > div > div:last-of-type{
+    background-image: url(../img/Pose_Side.png);
+}
+
+div.pop article.pop3 > div.info > section.pose_info > div > div::after{
+    content: '';
+    position: absolute; 
+    color: #fff;
+    background-color: var(--mainW);
+    right: 10px; bottom: -1px;
+    width: 40px; height: 30px;
+    line-height: 30px;
+    border: 2px solid #2a86c4;
+    border-top: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > div:nth-of-type(1)::after{content: '정면';}
+div.pop article.pop3 > div.info > section.pose_info > div > div:nth-of-type(2)::after{content: '측면';}
+div.pop article.pop3 > div.info > section.pose_info > div > table{
+    float: left;
+    border-collapse: collapse;
+    width: 600px;
+    margin-left: 10px;
+    margin-top: -46px;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > thead > tr:nth-of-type(1) td{
+    height: 30px; font-size: 17px; font-weight: 500; padding: 10px 6px; border: none;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > thead > tr:nth-of-type(1) td > i{
+    font-weight: 600;
+}
+
+div.pop article.pop3 > div.info > section.pose_info > div > table th,
+div.pop article.pop3 > div.info > section.pose_info > div > table td{
+    border: 1px solid rgba(136, 136, 136, 0.8);
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > thead > tr:nth-of-type(2){
+    height: 50px; font-size: 18px; letter-spacing: 2px; color: #fff; background-color: var(--mainW);
+    border-bottom: none;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > thead > tr:nth-of-type(3){
+    height: 30px;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table thead tr:nth-of-type(3) th{
+    font-weight: 500; height: 30px; border-top: none;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > thead > tr:nth-of-type(2) th{
+    font-weight: 400; color: #fff; border-bottom: none;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody th{
+    font-weight: 400;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody td{
+    width: 100px; height: 50px; text-align: center; font-size: 18px; font-weight: 400;
+    position: relative;
+}
+div.pop article.pop3 > div.info table > tbody td div.dotted{
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody td > span{
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 15px;
+    /* transform: translate(-50%, -50%); */
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody td i{
+    color: #555; 
+    /* position: absolute; top: 4px; */
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 3px;
+}
+/* div.pop article.pop3 > div.info > section.pose_info > div > table > tbody > tr > td:nth-of-type(1) i,
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody > tr > td:nth-of-type(3) i{
+    left: 4px;
+}
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody > tr > td:nth-of-type(2) i,
+div.pop article.pop3 > div.info > section.pose_info > div > table > tbody > tr > td:nth-of-type(2) i{
+    left: 4px;
+} */
+
+/* 비교결과 */
+.pose_change{
+    flex-wrap: wrap;
+}
+.pose_change > div.option{
+    float: right;
+    width: 780px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+}
+.pose_change > div.option > button{
+    width: 50px; height: 32px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 1px solid var(--mainW);
+}
+.pose_change > div.option > button.active{
+    background-color: var(--mainW); color: #fff;
+}
+.pose_change > div.option > label{
+    margin-left: 16px;
+}
+article.pop3 > div.info select{
+    width: 120px;
+    height: 34px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+    border-radius: 2px;
+}
+.pose_change > div.content{
+    width: 100%;
+}
+.pose_change > div.content > section.img{
+    width: 376px; overflow: auto; float: left;
+}
+.pose_change > div.content > section.img > article{
+    width: 50%; float: left; padding: 2px;
+
+}
+.pose_change > div.content > section.img > article > h6{
+    width: 100%;
+    height: 32px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 1px solid var(--mainW);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+}
+.pose_change > div.content > section.img > article > h6.active{
+    background-color: var(--mainW); color: #fff;
+}
+.pose_change > div.content > section.img > article > h6 + div{
+    width: 100%; height: 279px;
+    margin-top: 10px;
+    border: 1px solid var(--mainW);
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+/* 이전측정 사진 */
+.pose_change > div.content > section.img > article:first-of-type > h6 + div{
+    background-image: url(../img/Pose_Front.png);
+}
+/* 최근측정 사진 */
+.pose_change > div.content > section.img > article:last-of-type > h6 + div{
+    background-image: url(../img/Pose_Front.png);
+}
+
+.pose_change > div.content > section.table{
+    height: 325px; width: 600px; overflow: auto; 
+    float: left; margin-left: 6px;
+}
+.pose_change > div.content > section.table > h5{
+    height: 32px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 10px;
+    line-height: 32px;
+}
+.pose_change > div.content > section.table > table{
+    width: 100%; margin-top: 10px; border-collapse: collapse;
+    border: 1px solid rgba(136, 136, 136, 0.8);
+}
+.pose_change > div.content > section.table > table thead{
+    background-color:  var(--mainW);
+    color: #fff;
+}
+.pose_change > div.content > section.table > table thead th{
+    color: #fff; font-weight: 400; font-size: 16px; letter-spacing: 2px;
+}
+.pose_change > div.content > section.table > table tbody th{
+    font-weight: 500; letter-spacing: 1px;
+}
+.pose_change > div.content > section.table > table tbody > tr:first-of-type > th:first-of-type{
+    font-size: 20px;
+}
+.pose_change > div.content > section.table > table thead tr{height: 36px;}
+.pose_change > div.content > section.table > table tbody tr{height: 52px;}
+.pose_change > div.content > section.table > table tbody td{
+    text-align: center; position: relative;
+    font-size: 16px;
+}
+.pose_change > div.content > section.table > table tbody td i{
+    font-size: 14px; color: #555; 
+    margin: 0 4px;
+}
+.pose_change > div.content > section.table > table tbody td > span{
+    letter-spacing: 1px;
+    font-size: 15px;
+
+}
+.pose_change > div.content > section.table > table tbody td > span > i{
+    display: inline-block;
+    margin: 0 3px;
+}
+.pose_change > div.content > section.table > table tbody td span.calc{
+    position: absolute;
+    font-size: 12px;
+    bottom: 2px;
+    right: 2px;
+}
+.pose_change > div.content > section.table > table tbody td span.calc i{
+    transform: translateY(2px);
+    color: red;
+}
+
+/* 체형정보변화도 */
+div.pop > div.content > article.pop4{width: 900px;}
+div.pop > div.content > article.pop4 > div.btn{float: left;}
+div.pop > div.content > article.pop4 > div.part_btn{float: right;}
+div.pop > div.content > article.pop4 button,
+div.pop > div.content > article.pop4 select
+{
+    padding: 4px 12px;
+    color: #212529;
+    background-color: #f8f9fa;
+    font-size: 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+div.pop > div.content > article.pop4 button.active{
+    background-color: var(--mainW); color: #fff;
+}
+
+/* ROM정보자세히 */
+div.pop article.pop5 > div.info_btn{
+    width: 100%; height: 60px;
+    border: var(--mainW) 1px solid;
+}
+div.pop article.pop5 > div.info_btn > button{
+    width: 50%; height: 100%; float: left;
+    border: none; font-size: 20px;
+    font-weight: 400; letter-spacing: 1px;
+}
+div.pop article.pop5 > div.info_btn > button.active{
+    background-color: var(--mainW); color: white;
+}
+div.pop article.pop5 > div.info{width: 984.69px;}
+div.pop article.pop5 > div.info > section{position: relative;}
+div.pop article.pop5 > div.info > section.rom_info{
+    display: flex;
+    display: none;
+    flex-wrap: wrap;
+}
+div.pop article.pop5 > div.info > section h4{
+    padding: 12px 6px; font-size: 17px; font-weight: 500;
+    width: 200px;
+}
+div.pop article.pop5 > div.info > section h4 > i{
+    font-weight: 600;
+}
+div.pop article.pop5 > div.info > section.rom_info > p{
+    position: absolute; right: 0;top: 0; padding: 10px 6px;
+}
+div.pop article.pop5 > div.info > section.rom_info > p > button{
+    width: 50px; height: 32px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 1px solid var(--mainW);
+}
+div.pop article.pop5 > div.info > section.rom_info > p > button.active{
+    background-color: var(--mainW); color: #fff;
+}
+div.pop article.pop5 > div.info > section.rom_info > p label{
+    font-size: 14px; margin-right: 4px;
+}
+div.pop article.pop5 > div.info > section.rom_info > p select{
+    width: 120px;
+    height: 34px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+    border-radius: 2px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div{
+    display: flex;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > div{
+    position: relative; overflow: hidden;
+    width: 184px; height: 280px; margin-right: 2px;
+    background-position: center;
+    background-size: auto 100%;
+    border: 1px solid var(--mainW);
+}
+div.pop article.pop5 > div.info > section.rom_info > div > div:first-of-type{
+    background-image: url(../img/Pose_Front.png);
+}
+div.pop article.pop5 > div.info > section.rom_info > div > div:last-of-type{
+    background-image: url(../img/Pose_Front.png);
+}
+
+div.pop article.pop5 > div.info > section.rom_info > div > div::after{
+    content: '';
+    position: absolute; 
+    color: #fff;
+    background-color: var(--mainW);
+    right: 10px; top: 0;
+    width: 40px; height: 30px;
+    line-height: 30px;
+    border: 2px solid #2a86c4;
+    border-top: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > div:nth-of-type(1)::after{content: '정면';}
+div.pop article.pop5 > div.info > section.rom_info > div > div:nth-of-type(2)::after{content: '측면';}
+div.pop article.pop5 > div.info > section.rom_info > div > table{
+    float: left;
+    border-collapse: collapse;
+    width: 500px;
+    margin-top: 6px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > thead > tr:nth-of-type(1) td{
+    height: 30px; font-size: 17px; font-weight: 500; padding: 10px 6px; border: none;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > thead > tr:nth-of-type(1) td > i{
+    font-weight: 600;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table th,
+div.pop article.pop5 > div.info > section.rom_info > div > table td{
+    border: 1px solid var(--mainWW);
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > thead > tr:nth-of-type(2){
+    height: 50px; font-size: 18px; letter-spacing: 2px; color: #fff; background-color: var(--mainW);
+    border-bottom: none;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > thead > tr:nth-of-type(3){
+    height: 30px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table thead tr:nth-of-type(3) th{
+    font-weight: 500; height: 30px; border-top: none;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > thead > tr:nth-of-type(2) th{
+    font-weight: 400; color: #111; border-bottom: none;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > tbody th{
+    font-weight: 400;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > tbody td{
+    width: 100px; height: 50px; text-align: center; font-size: 16px; font-weight: 400;
+    position: relative;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > tbody td > div.dotted{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table > tbody td > div.pain{
+    width: 30px; height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+/* 벨런스 */
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance{
+    width: 466px; margin-left: 16px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > thead > tr:nth-of-type(3) > th{
+    width: 16.6666%; font-weight: 500; font-size: 12px; letter-spacing: 0px; text-align: center;
+
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > thead > tr:nth-of-type(2) > th:nth-of-type(1),
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > thead > tr:nth-of-type(3) > th:nth-of-type(3),
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > tbody > tr > td:nth-of-type(3){
+    border-right: 2px solid var(--mainWWW);
+}
+/* 막대그래프 */
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > tbody > tr > td > div{
+    width: 0;
+    height: 20px;
+    transition: width .5s;
+    background-color: rgb(5, 207, 5);
+    position: absolute;
+    top: calc(50% - 10px);
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > tbody > tr > td:nth-of-type(3) > div{
+    right: 1px;
+}
+div.pop article.pop5 > div.info > section.rom_info > div > table.balance > tbody > tr > td:nth-of-type(4) > div{
+    left: 1px;
+}
+
+
+/* ROM검사 비교결과 */
+.rom_change{
+    flex-wrap: wrap;
+    height: auto;
+    /* height: 332px;
+    height: 395px; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.rom_change > div.option{
+    float: right;
+    width: 780px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+}
+.rom_change > div.option > button{
+    width: 50px; height: 32px;
+    border-radius: 4px;
+    border: 1px solid var(--mainW);
+}
+.rom_change > div.option > button.active{
+    background-color: var(--mainW); color: #fff;
+}
+.rom_change > div.option > label{
+    margin-left: 16px;
+}
+article.pop5 > div.info select{
+    width: 120px;
+    height: 34px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+    border-radius: 2px;
+}
+.rom_change > div.content{
+    width: 100%;
+}
+.rom_change > div.content > section{
+    width: calc(50% - 5px);
+}
+.rom_change > div.content > section.right_table{
+    float: left;
+}
+.rom_change > div.content > section.left_table{
+    float: right;
+}
+.rom_change > div.content > section > table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid var(--mainWW);
+}
+.rom_change > div.content > section > table thead{
+    color: #fff;
+    background-color:  var(--mainW);
+}
+.rom_change > div.content > section > table th{
+    font-weight: 400; 
+    font-size: 16px; 
+    letter-spacing: 1px;
+    border-collapse: collapse;
+}
+.rom_change > div.content > section > table th.titleRowspan{
+    width: 114px;
+}
+.rom_change > div.content > section > table tr{
+    height: 50px;
+}
+.rom_change > div.content > section > table td{
+    text-align: center;
+    position: relative;
+    font-size: 15px;
+    border-collapse: collapse;
+}
+.rom_change > div.content > section > table td i{
+    display: inline-block;
+    font-size: 14px; 
+    color: #555; 
+    margin: 0 4px;
+}
+.rom_change > div.content > section > table td > span{
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+/* ROM정보변화도 */
+div.pop > div.content > article.pop6{width: 900px;}
+div.pop > div.content > article.pop6 > div.btn{float: left;}
+div.pop > div.content > article.pop6 > div.part_btn{float: right;}
+div.pop > div.content > article.pop6 button,
+div.pop > div.content > article.pop6 select{
+    padding: 4px 12px;
+    color: #212529;
+    background-color: #f8f9fa;
+    font-size: 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+div.pop > div.content > article.pop6 button.active{
+    background-color: var(--mainW); color: #fff;
+}
+
+
+
+
+#itemListSetPopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    min-width: 400px;
+    min-height: 200px;
+    max-width: 1100px;
+    max-height: 800px;
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    /* display: none; */
+}
+#itemListSetPopup > h2{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+#itemListSetPopup > h2 > button{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+#itemListSetPopup > h2 > button > div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#itemListSetPopup > h2 > button > div > span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#itemListSetPopup > h2 > button > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#itemListSetPopup > h2 > button > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+/* 내용 */
+#itemListSetPopup > form{
+    padding: 12px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > i{
+    font-size: 20px;
+    color: #555;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 300px;
+    height: 200px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div.right{
+    width: 400px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div > h3{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info{
+    height: calc(100% - 50px);
+    padding: 0 12px;
+    font-size: 14px;
+    line-height: 44px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .beforeInfo > span > span{
+    display: inline-block;
+    margin: 0 2px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info h4{
+    display: inline-block;
+    width: 60px;
+    font-weight: 500;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info h4 + span{
+    letter-spacing: 1px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info input{
+    height: 30px;
+    border: 1px solid rgba(128,128,128,.3);
+    padding: 0 5px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info input[type="date"]{
+    width: 140px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info input[type="text"]{
+    width: 80px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info > div{
+    position: relative;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info > div > p{
+    position: absolute;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    top: 30px;
+}
+#itemListSetPopup #dateTimeSetFrm > .dateTimeSet_POP > div .info > div > p > input{
+    margin: 0 4px;
+}
+#itemListSetPopup form > .bottom{
+    padding: 20px 0 20px;
+    margin: 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+#itemListSetPopup form > .bottom > button{
+    width: 100px;
+    margin: 0 4px;
+    height: 36px;
+    border: 0;
+}
+#itemListSetPopup form > .bottom > button:first-of-type{
+    background-color: var(--mainW);
+    color: #fff;
+}
+#itemListSetPopup form > .bottom > button:last-of-type{
+    background-color: var(--gray);
+    color: #fff;
+}
+
+/* 사용내역보기 */
+#itemListSetPopup #useListSetFrm .con{
+    max-height: 400px;
+    overflow: auto;
+}
+#itemListSetPopup #useListSetFrm table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(200,200,200,.4);
+}
+#itemListSetPopup #useListSetFrm table th{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background-color: var(--mainW);
+    height: 32px;
+    color: #fff;
+}
+#itemListSetPopup #useListSetFrm table th:nth-of-type(1){width: 50px;}
+#itemListSetPopup #useListSetFrm table th:nth-of-type(2){width: 200px;}
+#itemListSetPopup #useListSetFrm table th:nth-of-type(3){width: 70px;}
+#itemListSetPopup #useListSetFrm table th:nth-of-type(4){width: 100px;}
+#itemListSetPopup #useListSetFrm table td{
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    height: 26px;
+    letter-spacing: 1px;
+}
+
+/* 강사 변경 */
+#itemListSetPopup #changeTeacherSetFrm p{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+#itemListSetPopup #changeTeacherSetFrm p > label{
+    display: inline-block;
+    width: 80px;
+}
+#itemListSetPopup #changeTeacherSetFrm p > input,
+#itemListSetPopup #changeTeacherSetFrm p > select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+}
+#itemListSetPopup #changeTeacherSetFrm p > input{
+    padding: 0 9px;
+    border: 0;
+    cursor: default;
+    outline: 0;
+}
+
+
+/* 이용권 기간 */
+#itemListSetPopup #for_ticketingSetFrm p{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+#itemListSetPopup #for_ticketingSetFrm p > label{
+    display: inline-block;
+    width: 100px;
+}
+
+#itemListSetPopup #for_ticketingSetFrm p input,
+#itemListSetPopup #for_ticketingSetFrm p select{
+    width: 150px;
+    height: 30px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+}
+#itemListSetPopup #for_ticketingSetFrm p input{
+    padding: 0 9px;
+}
+#itemListSetPopup #for_ticketingSetFrm p select#ticketingCount{
+    width: 100px;
+}
+#itemListSetPopup #for_ticketingSetFrm p span{
+    display: inline-block;
+    margin: 0 4px;
+}
+#itemListSetPopup #for_ticketingSetFrm p.day > label{
+    width: 100px;
+}
+#itemListSetPopup #for_ticketingSetFrm p.day span{
+    width: 100%;
+    display: inline-block;
+    width: 380px;
+    margin: 0;
+}
+#itemListSetPopup #for_ticketingSetFrm p.day span > label{
+    float: left;
+    width: calc(100% / 7);
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background-color: #eee;
+    cursor: pointer;
+}
+#itemListSetPopup #for_ticketingSetFrm p.day span > input:checked + label{
+    background-color: var(--mainW);
+    color: #fff;
+}
+
+/* 이용권 정지 */
+#itemListSetPopup > form#stopTicketSetFrm{
+    overflow: auto;
+    padding: 15px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con{
+    width: 100%;
+    height: 510px;
+    position: relative;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .voucherInfo{
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > h3{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .voucherInfo::after{
+    content: '이용중';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 76px;
+    height: 30px;
+    background-color: var(--mainW);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 13px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .voucherInfo::before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 66px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .voucherInfo .stopType{
+    color: var(--mainW);
+    font-weight: 500;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .voucherInfo .stopName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > h3{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > div{
+    padding: 4px 0;
+    line-height: 38px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > div > input,
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > div > select{
+    width: 160px;
+    height: 30px;
+    border: 1px solid var(--mainW);
+    padding: 0 5px;
+    display: inline-block;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > div > select{
+    width: 120px;
+    padding: 0 3px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopOption > div > span{
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 10px;
+    text-indent: 5px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopResult > h3{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopResult > div{
+    padding: 4px 0;
+    line-height: 38px;
+    font-size: 14px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopResult > div span.title{
+    display: inline-block;
+    margin-right: 10px;
+    width: 140px;
+    text-indent: 5px;
+}
+#itemListSetPopup > form#stopTicketSetFrm > .con > .stopResult > div span:last-of-type{
+    letter-spacing: 1px;
+}
+
+/* 이용권 재개 */
+#itemListSetPopup > form#startTicketSetFrm{
+    overflow: auto;
+    padding: 15px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con{
+    width: 100%;
+    height: 330px;
+    position: relative;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .voucherInfo{
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > h3{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .voucherInfo::after{
+    content: '이용중';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 76px;
+    height: 30px;
+    background-color: var(--mainW);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 13px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .voucherInfo::before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 66px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .voucherInfo .startType{
+    color: var(--mainW);
+    font-weight: 500;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .voucherInfo .startName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .startResult > h3{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .startResult > div{
+    padding: 4px 0;
+    line-height: 38px;
+    font-size: 14px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .startResult > div span.title{
+    display: inline-block;
+    margin-right: 10px;
+    width: 140px;
+    text-indent: 5px;
+}
+#itemListSetPopup > form#startTicketSetFrm > .con > .startResult > div span:last-of-type{
+    letter-spacing: 1px;
+}
+
+
+
+#errorMuscleView_pop{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    z-index: 10000000000;
+    border-radius: 6px;
+    border: 3px solid var(--mainW);
+    display: none;
+}
+#errorMuscleView_pop > h2{
+    background-color: var(--mainW);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+#errorMuscleView_pop > section{
+    width: 1200px;
+    height: 400px;
+    border-bottom: 1px solid var(--mainW);
+    padding: 10px;
+    position: relative;
+}
+#errorMuscleView_pop > section > h3{
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid var(--mainW);
+}
+#errorMuscleView_pop > section > .pic{
+    float: left;
+    width: 300px;
+    height: 100%;
+    padding-left: 50px;
+}
+#errorMuscleView_pop > section > .pic > img{
+    height: 100%;
+}
+#errorMuscleView_pop > section > .table{
+    float: left;
+    height: 100%;
+}
+#errorMuscleView_pop > section > .muscle{
+    float: left;
+    width: 380px;
+    height: 100%;
+    position: relative;
+    margin-left: 10px;
+}
+#errorMuscleView_pop > section > .muscle > .R_L_name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+}
+#errorMuscleView_pop > section > .muscle > .R_L_name > div{
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    color: #555;
+}
+#errorMuscleView_pop > section table{
+    width: 490px;
+    height: 377px;
+    border-collapse: collapse;
+}
+#errorMuscleView_pop > section table th{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+#errorMuscleView_pop > section table td{
+    text-align: center;
+    cursor: default;
+}
+#errorMuscleView_pop > section table td.cursor{
+    cursor: pointer;
+}
+#errorMuscleView_pop > section table td.cursor:hover{
+    background-color: rgb(243, 243, 243);
+}
+#errorMuscleView_pop > section table td > .rect{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(0,0,0,.8);
+}
+#errorMuscleView_pop > section table td > .rect.red{
+    background: rgb(255,25,0);
+    border: 1px solid rgb(255,25,0);
+}
+#errorMuscleView_pop > section table td > .rect.yellow{
+    background: rgb(255,187,0);
+    border: 1px solid rgb(255,187,0);
+}
+#errorMuscleView_pop > section table > thead th{
+    height: 32px;
+}
+#errorMuscleView_pop > section table > tbody > tr > th{
+    width: 94px;
+}
+#errorMuscleView_pop > section table > tbody > tr > td:nth-of-type(1),
+#errorMuscleView_pop > section table > tbody > tr > td:nth-of-type(3){
+    width: 162px;
+}
+#errorMuscleView_pop > section table > tbody > tr > td:nth-of-type(1).active,
+#errorMuscleView_pop > section table > tbody > tr > td:nth-of-type(3).active{
+    background-color: rgb(219, 240, 238);
+}
+#errorMuscleView_pop > div.btn{
+    overflow: auto;
+    padding: 10px;
+}
+#errorMuscleView_pop > div.btn > button{
+    border-radius: 4px;
+    float: right;
+    background-color: #f03245;
+    color: #fff;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 4px;
+}
+
+
+
+
+
+#bodyInfo_Write{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    z-index: 10000000000;
+    border-radius: 6px;
+    border: 3px solid var(--mainW);
+    display: none;
+}
+#bodyInfo_Write > h2{
+    background-color: var(--mainW);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+#bodyInfo_Write > .con{
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+}
+#bodyInfo_Write > .con > p{
+    margin: 20px 0 30px;
+    padding: 0 10px;
+}
+#bodyInfo_Write > .con > p > input{
+    width: 134px;
+}
+#bodyInfo_Write > .con label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100px;
+}
+#bodyInfo_Write > .con input,
+#bodyInfo_Write > .con select{
+    height: 30px;
+    border: 1px solid var(--mainW);
+    border-radius: 3px;
+    width: 100px;
+    padding: 0 5px;
+}
+#bodyInfo_Write > .con > fieldset{
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#bodyInfo_Write > .con > fieldset > legend{
+    padding: 0 5px;
+    font-size: 15px;
+}
+#bodyInfo_Write > .con > fieldset > p{
+    padding: 10px 0;
+}
+#bodyInfo_Write > .con > fieldset > p > small{
+    display: inline-block;
+    margin-left: 20px;
+    width: 150px;
+    color: #444;
+}
+#bodyInfo_Write > div.btn{
+    overflow: auto;
+    padding: 10px;
+}
+#bodyInfo_Write > div.btn > button{
+    border-radius: 4px;
+    float: right;
+    background-color: #f03245;
+    color: #fff;
+    padding: 6px 20px;
+    border: 0;
+    border-radius: 4px;
+}
+#bodyInfo_Write > div.btn > button.save{
+    background-color: var(--mainW);
+    margin-right: 6px;
+    color: #fff;
+}
+
+
+
+#desaInfo_Write{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    z-index: 10000000000;
+    border-radius: 6px;
+    border: 3px solid var(--mainW);
+    display: none;
+}
+#desaInfo_Write > h2{
+    background-color: var(--mainW);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+#desaInfo_Write > .con{
+    width: 560px;
+    height: 540px;
+    padding: 10px;
+}
+#desaInfo_Write > .con > p{
+    margin: 20px 0 30px;
+    padding: 0 10px;
+}
+#desaInfo_Write > .con > p > input{
+    width: 134px;
+}
+#desaInfo_Write > .con label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 130px;
+}
+#desaInfo_Write > .con input,
+#desaInfo_Write > .con select{
+    height: 30px;
+    border: 1px solid var(--mainW);
+    border-radius: 3px;
+    width: 154px;
+    padding: 0 5px;
+}
+#desaInfo_Write > .con input#desaInfo_SBP{
+    width: 70px;
+}
+#desaInfo_Write > .con input#desaInfo_DBP{
+    width: 70px;
+}
+#desaInfo_Write > .con input#desaInfo_HDL{
+    width: 70px;
+}
+#desaInfo_Write > .con input#desaInfo_LDL{
+    width: 70px;
+}
+#desaInfo_Write > .con > fieldset{
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#desaInfo_Write > .con > fieldset > legend{
+    padding: 0 5px;
+    font-size: 15px;
+}
+#desaInfo_Write > .con > fieldset > p{
+    padding: 10px 0;
+}
+#desaInfo_Write > .con > fieldset > p > small{
+    display: inline-block;
+    margin-left: 20px;
+    width: 200px;
+    color: #444;
+}
+#desaInfo_Write > div.btn{
+    overflow: auto;
+    padding: 10px;
+}
+#desaInfo_Write > div.btn > button{
+    border-radius: 4px;
+    float: right;
+    background-color: #f03245;
+    color: #fff;
+    padding: 6px 20px;
+    border: 0;
+    border-radius: 4px;
+}
+#desaInfo_Write > div.btn > button.save{
+    background-color: var(--mainW);
+    margin-right: 6px;
+    color: #fff;
+}
+
+svg::before{
+    content: 'R';
+}
+
+/* //////////////////////////////////////
+/* 작업용 */
+
+/* 현재 작업중 */
+.pop1,.pop2,.pop3,.pop4,
+.pop5,.pop6,.pop7,.pop8{
+    display: none;
+}
+
+
+
+

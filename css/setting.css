@@ -1,0 +1,2039 @@
+@charset "utf-8";
+
+.dark_div{
+    background-color: rgba(0,0,0,.2);
+    z-index: 50;
+}
+
+/* Menu UnderBar */
+header > nav > ul > li:nth-of-type(9) > a:after{
+    display: block;
+}
+
+section.content > article{
+    float: left;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.top_sMenu{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.top_sMenu > div{
+    width: 100px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.top_sMenu > div > i{
+    transform: rotate(0deg);
+    animation: rotate 3s infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate{
+    0%  {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.top_sMenu li{
+    text-align: center;
+    padding: 6px 16px;
+    margin: 4px;
+    float: left;
+    border: 1px solid #a7a8b8;
+    background-color: #acadb9;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+}
+.top_sMenu li:hover {
+    background-color: #83848a;
+}
+.top_sMenu li.active{
+    background-color: rgb(122, 123, 128);
+}
+
+article#trainerSet{
+    height: 744px;
+}
+
+.level{
+    width: 280px;
+    height: calc(100% - 20px);
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    position: relative;
+    overflow: auto;
+}
+.level h3{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 20px;
+}
+.level ul > li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    position: relative;
+    border-bottom: 1px solid #319ce41a;
+    transition: .1s background-color;
+    cursor: pointer;
+}
+.level ul > li[data-title="카테고리(직급) 추가"]{
+    background-color: var(--mainWWW);
+}
+.level ul#levelList > li:first-of-type{
+    border-top: 1px solid #319ce41a;
+}
+.level ul > li > a{
+    display: block;
+    padding: 16px 0;
+    width: 100%;
+    height: 100%;
+}
+.level ul > li:hover{
+    background-color: ghostwhite;
+}
+.level ul#levelList > li.active{    
+    background-color: var(--mainWWW);
+}
+.level ul > li > i{
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #aaa;
+}
+.level ul > li > i.fa-angle-up{
+    right: 34px;
+}
+.level ul > li > i.fa-angle-down{
+    right: 4px;
+}
+.level ul > li > i:hover{
+    color: #111;
+}
+.level ul > li > span{
+    display: block;
+    width: 200px;
+    padding-left: 80px;
+    height: 100%;
+    line-height: 50px;
+}
+.level ul#levelList > li[data-seq="9999"]::after{
+    content: attr(data-length);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: rgb(252, 83, 83);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+}
+button.add_Trainer_pop{
+    position: absolute;
+    letter-spacing: 1px;
+    top: -46px;
+    right: 20px;
+    width: 120px;
+    height: 36px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #15a556;
+    background-color: var(--mainW);
+    color: #fff;
+}
+
+.trainer{
+    border: 2px solid var(--mainW);
+    border-radius: 4px;
+    float: left;
+    margin: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    width: calc(100% - 340px);
+    height: calc(100% - 20px);
+}
+.trainer > h3{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    line-height: 20px;
+    height: 40px;
+    position: relative;
+}
+.trainer > h3 > select{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 2px 6px;
+    outline: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.trainer > ul{
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    float: left;
+}
+.trainer > ul > li{
+    width: calc(100% - 8px);
+    overflow: auto;
+    height: unset;
+    overflow: hidden;
+    transition: .2s height;
+    text-indent: 14px;
+    margin: 6px 4px 20px;
+    color: #111;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+}
+/* 밑에 하얀 bar */
+.trainer > ul > li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 38px;
+    height: 1px;
+    background-color: var(--sub);
+    display: none;
+}
+.trainer > ul > li > ul{
+    margin-top: 10px;
+    overflow: auto;
+    border: 1px solid var(--mainWW);
+    background: #fff;
+}
+.trainer > ul > li > ul > li{
+    padding: 8px 12px;
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid var(--grayW);
+    color: var(--fontB);
+    float: left;
+    width: calc(33.33% - 8px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: default;
+    transition: .3s;
+    font-size: 13px;
+}
+
+/* 리스트 안에 요소들 */
+.trainer > ul > li > ul > li > img{
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    float: left;
+}
+.trainer > ul > li > ul > li > div.info{
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-indent: 0;
+    line-height: 24px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.trainer > ul > li > ul > li > div.info > div.detail{
+    align-self: flex-start;
+    right: 12px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--fontG);
+}
+.trainer > ul > li[data-seq="9999"] > ul > li div.detail{
+    font-size: 15px;
+    transform: translateY(-3px);
+}
+.trainer > ul > li[data-seq="9999"] > ul > li div.detail > i{
+    font-size: 16px;
+}
+.trainer > ul > li > ul > li div.detail:hover{
+    color: var(--mainW);
+}
+.trainer > ul > li > ul > li i.fa-trash-alt:hover{
+    color: rgb(235, 90, 90);
+}
+.trainer > ul > li > ul > li > div.info > div.detail:hover{
+    color: var(--main);
+    font-weight: 700;
+}
+.trainer > ul > li > ul > li i.fa-trash-alt{
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    padding: 6px 10px 6px 0;
+    font-size: 13px;
+    color: #666;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: .3s background-color;
+}
+.trainer > ul > li > ul > li i.fa-trash-alt:hover{
+    color: rgb(238, 14, 14);
+}
+
+
+
+/* 센터관리 */
+article#centerSet > form{
+    padding: 10px 20px;
+}
+article#centerSet > form > section{
+    padding: 0;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    overflow: auto;
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    clear: both;
+    /* border-bottom: 1px solid var(--mainA); */
+}
+article#centerSet > form h3{
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 38px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    border-bottom: 1px solid var(--mainW);
+}
+article#centerSet > form > section > .content{
+    overflow: auto;
+    padding: 0 30px 30px;
+}
+article#centerSet > form > section.companyInfo > .content > div > p{
+    padding: 5px;
+    width: 300px;
+    height: 36px;
+    border: 1px solid var(--mainA);
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+    background-color: #eee;
+}
+article#centerSet > form > section.companyInfo > .content > div.companyAddress > p{
+    width: 750px;
+}
+article#centerSet > form > section > .content > div{
+    width: 400px;
+    padding: 10px;
+    margin-right: 50px;
+    margin-bottom: -11px;
+    float: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+article#centerSet > form > section > .content > div.centerManager,
+article#centerSet > form > section > .content > div.centerName,
+article#centerSet > form > section > .content > div.centerPhone,
+article#centerSet > form > section > .content > div.centerPax,
+article#centerSet > form > section > .content > div.centerCome,
+article#centerSet > form > section > .content > div.centerSns{
+    width: 740px;
+}
+article#centerSet > form > section > .content > div.centerManager input,
+article#centerSet > form > section > .content > div.centerName input,
+article#centerSet > form > section > .content > div.centerPhone input,
+article#centerSet > form > section > .content > div.centerPax input,
+article#centerSet > form > section > .content > div.centerCome input,
+article#centerSet > form > section > .content > div.centerSns input{
+    width: 380px;
+}
+article#centerSet > form > section > .content > div.companyAttr,
+article#centerSet > form > section > .content > div.companyAddress,
+article#centerSet > form > section > .content > div.companyPhone,
+article#centerSet > form > section > .content > div.companyPage,
+article#centerSet > form > section > .content > div.companyCome,
+article#centerSet > form > section > .content > div.ceoEmail
+{
+    clear: both;
+}
+article#centerSet > form > section > .content > div.companyAddress{
+    width: 850px;
+}
+article#centerSet > form > section > .content > div.companyAddress > input{
+    width: 200px;
+}
+article#centerSet > form > section > .content > div.companyAddress > input#companyAddress2{
+    width: 560px;
+    margin-top: 14px;
+}
+article#centerSet > form > section > .content > div > label{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+article#centerSet > form > section > .content > div > input{
+    width: 100%;
+    height: 36px;
+    border: 1px solid var(--mainA);
+    outline: 0;
+    padding: 0 6px;
+    transition: .1s;
+}
+article#centerSet > form > section > .content > div > input:focus{
+    border-width: 2px;
+}
+article#centerSet > form > section > .content > div > input[type="radio"]{
+    width: 14px;
+    height: 14px;
+}
+article#centerSet > form > section > .content > div > label.radio_label{
+    width: 80px;
+    margin: 0 20px 0 4px;
+    font-size: 15px;
+    color: #333;
+}
+article#centerSet > form > section > .content > div > label.address_label{
+    width: 60px;
+    margin: 0 10px;
+    letter-spacing: 1px;
+}
+article#centerSet > form > section > .content > div.centerCome{
+    width: 770px;
+    margin-top: 0px;
+}
+article#centerSet > form > section > .content > div.centerCome > textarea{
+    width: 100%;
+    min-height: 130px;
+    max-height: 130px;
+    resize: none;
+    border: 1px solid var(--mainA);
+    outline: 0;
+    transition: .1s;
+    padding: 6px;
+    resize: vertical;
+}
+article#centerSet > form > section > .content > div.centerCome > textarea:focus{
+    border-width: 2px;
+}
+/* 센터 정보 */
+article#centerSet > form > section.centerInfo{
+    flex-wrap: wrap;
+}
+article#centerSet > form > section.centerInfo .centerImage{
+    width: 350px;
+    margin-right: 20px;
+}
+article#centerSet > form > section.centerInfo p.centerEx{
+    width: 480px;
+    margin-right: 0;
+}
+article#centerSet > form > section.centerInfo .centerImage > label{
+    width: 100%;
+}
+article#centerSet > form > section.centerInfo .centerProfileImage{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--mainA);
+}
+article#centerSet > form > section.centerInfo .centerProfileImage + label{
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    background-color: var(--main);
+    text-align: center;
+    color: #fff;
+    line-height: 34px;
+    align-self: flex-end;
+    margin: 0;
+    margin-left: 20px;
+    cursor: pointer;
+}
+article#centerSet > form > section.centerInfo #centerEx{
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--mainA);
+    outline: 0;
+    transition: .1s;
+    resize: none;
+    padding: 6px;
+}
+article#centerSet > form > section.centerInfo #centerEx:focus{
+    border-width: 2px;
+}
+/* 센터 운영 */
+article#centerSet > form > section.centerTurn > div.content{
+    padding: 10px;
+    height: 470px;
+}
+article#centerSet > form > section.centerTurn > div.content > div{
+    float: left;
+    margin-right: 100px;
+    width: 600px;
+}
+article#centerSet > form > section.centerTurn h4{
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+article#centerSet > form > section.centerTurn li{
+    /* padding: 12px 0; */
+    height: 58px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+article#centerSet > form > section.centerTurn li > h5{
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    margin-right: 50px;
+    text-indent: 4px;
+}
+article#centerSet > form > section.centerTurn li select{
+    border: 1px solid var(--mainA);
+    outline: 0;
+    transition: .1s;
+    height: 34px;
+    width: 46px;
+    font-size: 15px;
+    color: #333;
+    letter-spacing: 1px;
+}
+article#centerSet > form > section.centerTurn li select:focus{
+    border-width: 2px;
+}
+article#centerSet > form > section.centerTurn li span{
+    display: inline-block;
+    margin-right: 10px;
+}
+article#centerSet > form > section.centerTurn li input + label,
+article#centerSet > form > section.centerTurn li input + label + input + label{
+    display: inline-block;
+    margin: 0 20px 0 4px;
+}
+article#centerSet > form > section.centerTurn li > p{
+    /* margin-left: 20px; */
+    display: none;
+}
+article#centerSet > form > section.centerTurn li > h5 + input + label + input:checked ~ p{
+    display: inline-block;
+}
+
+article#centerSet > form > section.centerTurn h4.shil_date{
+    margin-bottom: 10px;
+}
+
+/* 캘린더 */
+#calendar{
+    width: 410px;
+    height: 380px;
+    float: left;
+}
+#calendar > div{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--main);
+}
+#calendar > div .ui-corner-all{
+    background-color: var(--mainW);
+    color: #fff;
+    font-size: 24px;
+}
+#calendar > div .ui-corner-all > span{
+    color: #fff;
+}
+#calendar > div .ui-datepicker-title {
+    background-color: var(--mainW);
+    color: white;
+}
+#calendar .ui-datepicker-next,
+#calendar .ui-datepicker-prev{
+    height: calc(100% - 3px);
+}
+#calendar th{ width: calc(100% / 7) }
+#calendar td{ height: 46px; }
+#calendar td > a{
+    height: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainWW);
+    color: #fff;
+}
+#calendar td > a.holiday{
+    background-color: rgb(218, 72, 72);
+}
+#calendar td > a:hover{
+    background-color: var(--main);
+}
+#calendar td > a.holiday:hover{
+    background-color: rgb(218, 72, 72);
+}
+#calendar .ui-state-active{
+    border: 2px solid var(--main);
+}
+
+#calendar + #shil_dateList{
+    float: left;
+    width: 600px;
+    height: 380px;
+    border: 1px solid var(--main);
+    margin-left: 20px;
+    border-radius: 3px;
+    padding: 10px;
+}
+#calendar + #shil_dateList > h4{
+    text-indent: 10px;
+    padding: 10px 0;
+    margin-bottom: 6px;
+    border-bottom: 2px solid var(--main);
+    font-size: 16px;
+    font-weight: 500;
+}
+#calendar + #shil_dateList > div.list{
+    height: 308px;
+    overflow: auto;
+}
+#calendar + #shil_dateList > div.list > div{
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: var(--mainW);
+    color: #fff;
+    float: left;
+    margin: 6px;
+    cursor: pointer;
+    transition: .1s;
+}
+#calendar + #shil_dateList > div.list > div:hover{
+    background-color: var(--main);
+}
+
+
+/* 버튼 정보 */
+article#centerSet > form > section > .buttonDiv{
+    clear: both;
+    border: none;
+    text-align: center;
+    margin: 10px 0 0;
+    width: 1550px;
+    background-color: transparent;
+}
+article#centerSet > form > section > .buttonDiv > button{
+    width: 120px;
+    height: 36px;
+    border: 0;
+    background-color: var(--main);
+    color: #fff;
+}
+
+article#centerSet .centerRoom > .content{
+    padding: 0 20px;
+}
+article#centerSet .centerRoom .addRoomBtn{
+    width: 100px;
+    height: 34px;
+    background-color: var(--main);
+    color: #fff;
+    border: 0;
+    margin-bottom: 20px;
+}
+article#centerSet .centerRoom #RoomList > li{
+    padding: 10px 0;
+}
+article#centerSet .centerRoom #RoomList > li > input{
+    width: 400px;
+    height: 32px;
+    padding: 0 5px;
+}
+article#centerSet .centerRoom #RoomList > li > button{
+    width: 50px;
+    height: 32px;
+    background-color: #ee4a32;
+    border: 0;
+    color: #fff;
+}
+article#centerSet .centerRoom #RoomList > li > button.newBtn{
+    background-color: var(--mainW);
+}
+
+
+
+
+/* 이용권 관리 */
+article#itemSet .top_sMenu{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+article#itemSet{
+    height: 744px;
+}
+article#itemSet > button#addItem{
+    position: absolute;
+    top: -64px;
+    right: 20px;
+    padding: 0 14px;
+    width: 120px;
+    height: 36px;
+    background-color: var(--mainW);
+    border: var(--main);
+    color: #fff;
+}
+article#itemSet > nav.category{
+    width: 280px;
+    height: calc(100% - 20px);
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    position: relative;
+}
+article#itemSet > nav.category h3{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0 10px;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 20px;
+}
+article#itemSet > nav.category > div{
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+article#itemSet > nav.category > div > ul > li{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    position: relative;
+    border-bottom: 1px solid var(--mainWWW);
+    transition: .1s background-color;
+}
+article#itemSet > nav.category > div > ul > li#addCategory{
+    background-color: var(--mainWWW);
+    color: #666;
+}
+article#itemSet > nav.category > div > ul > li#addCategory:hover{
+    color: #000;
+}
+article#itemSet > nav.category > div > ul > li#setCategory{
+    color: #666;
+}
+article#itemSet > nav.category > div > ul > li#setCategory:hover{
+    color: #000;
+}
+article#itemSet > nav.category > div > ul > li > a{
+    display: block;
+    padding: 16px 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+article#itemSet > nav.category > div > ul > li > i{
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    padding: 10px;
+    cursor: pointer;
+    color: #666;
+}
+article#itemSet > nav.category > div > ul > li > i:hover{
+    color: #000;
+}
+article#itemSet > nav.category > div > ul > li:hover{
+    background-color: ghostwhite;
+}
+article#itemSet > nav.category > div > ul > li > ul{
+    width: 100%;
+}
+article#itemSet > nav.category > div > ul > li > ul > li{
+    transition: .1s background-color;
+}
+article#itemSet > nav.category > div > ul > li > ul > li:hover > a{
+    color: #000;
+    font-weight: 500;
+}
+article#itemSet > nav.category > div > ul > li > ul > li.AddSmallCategory > a{
+    color: #333;
+}
+article#itemSet > nav.category > div > ul > li > ul > li.AddSmallCategory:active > a{
+    color: #000;
+    font-weight: 500;
+}
+article#itemSet > nav.category > div > ul > li > ul > li > a{
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #666;
+    font-size: 12px;
+}
+article#itemSet > nav.category > div > ul#categoryList li.active{
+    background-color: var(--mainWWW);
+    color: #fff;
+}
+
+article#itemSet div.itemList{
+    border: 2px solid var(--mainW);
+    border-radius: 4px;
+    float: left;
+    margin: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    width: calc(100% - 340px);
+    height: calc(100% - 20px);
+}
+article#itemSet div.itemList > h3{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 20px;
+    height: 40px;
+}
+article#itemSet ul#itemList{
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    float: left;
+}
+article#itemSet ul#itemList > li{
+    border: 1px solid #999b9cbe;
+    border-radius: 4px;
+    width: calc(33% - 6.5px);
+    float: left;
+    margin: 5px;
+    transition: .3s;
+    padding: 10px;
+    height: 160px;
+    position: relative;
+}
+@media screen and (min-width: 2000px){
+    article#itemSet ul#itemList > li{
+        width: calc(25% - 10px);
+    }
+}
+article#itemSet ul#itemList > li > div.top{
+    position: relative;
+}
+article#itemSet ul#itemList > li > div.top > small{
+    position: absolute;
+    font-size: 12px;
+    line-height: 14px;
+    left: 0;
+    bottom: 0;
+}
+article#itemSet ul#itemList > li > div.top .itemType{
+    font-size: 13px;
+    font-weight: 500;
+}
+article#itemSet ul#itemList > li > div.top .itemType + p{
+    margin-top: 10px;
+
+}
+article#itemSet ul#itemList > li > div.top .itemType + p > span{
+    display: inline-block;
+}
+article#itemSet ul#itemList > li > div.top .itemName{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 2px 0 26px;
+}
+article#itemSet ul#itemList > li > div.top .itemDayWeek{
+    font-size: 14px;
+    margin-left: 10px;
+}
+article#itemSet ul#itemList > li > div.top .itemCategory{
+    font-size: 12px;
+    line-height: 24px;
+}
+article#itemSet ul#itemList > li > div.top > p:last-of-type{
+    position: absolute;
+    top: 0;
+    right: 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+article#itemSet ul#itemList > li > div.top > p:last-of-type > span{
+    font-size: 13px;
+}
+article#itemSet ul#itemList > li > div.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 2px dashed gray;
+}
+article#itemSet ul#itemList > li > div.bottom .itemPay{
+    font-size: 17px;
+    text-indent: 1px;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+article#itemSet ul#itemList > li > div.bottom button{
+    width: 70px;
+    height: 30px;
+    margin-left: 6px;
+    border-radius: 3px;
+    border: 0;
+    color: #111;
+    font-weight: 500;
+    font-size: 12px;
+}
+article#itemSet ul#itemList > li > div.bottom button{
+    border: 1px solid #ddd;
+    background-color: #eee;
+    transition: .2s background-color;
+}
+article#itemSet ul#itemList > li:hover > div.bottom button:first-of-type{
+    background-color: var(--mainWW);
+    color: #fff;
+}
+article#itemSet ul#itemList > li:hover > div.bottom button:first-of-type:hover{
+    background-color: var(--mainW);
+    color: #fff;
+}
+article#itemSet ul#itemList > li:hover > div.bottom button:last-of-type{
+    background-color: rgb(241, 80, 80);
+    background-color: #e29090;
+
+    color: #fff;
+}
+article#itemSet ul#itemList > li:hover > div.bottom button:last-of-type:hover{
+    background-color: rgb(241, 80, 80);
+    color: #fff;
+}
+
+
+
+/* 예약관리 */
+#wrap > .content > article#ticketingSet > form{
+    padding: 10px 20px;
+}
+#wrap > .content > article#ticketingSet > form > section{
+    padding: 0;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    overflow: auto;
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    clear: both;
+}
+#wrap > .content > article#ticketingSet > form > section > h3{
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    color: #fff;
+    border-bottom: 1px solid var(--mainW);
+    background-color: var(--mainWW);
+    width: 100%;
+    letter-spacing: 1px;
+    height: 40px;
+    line-height: 38px;
+    position: relative;
+}
+#wrap > .content > article#ticketingSet > form > section > h3 > small{
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    font-weight: 400;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content{
+    padding: 0 30px;
+}
+
+/* 개인/그룹레슨 공통Style */
+#wrap > .content > article#ticketingSet > form > section > div.content > h4{
+    text-indent: 4px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset{
+    padding: 10px;
+    border: 1px solid var(--mainWW);
+    margin-bottom: 40px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset:last-of-type{
+    margin: 0;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > p:first-of-type{
+    padding: 14px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    background-color: #eee;
+    line-height: 24px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5{
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > input{
+    margin-right: 6px;
+    margin-left: 6px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > label{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > label + span{
+    /* display: none; */
+    font-size: 13px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > label + span > input,
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > label + span > select{
+    width: 50px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    outline: 0;
+    padding: 0 3px;
+}
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset > h5 + p > label + span > input{
+    width: 40px;
+    padding: 0 6px;
+}
+
+
+
+#wrap > .content > article#ticketingSet > form > section > div.content > fieldset input[type="checkbox"]{
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 30px;
+}
+
+#wrap > .content > article#ticketingSet div.btn > button{
+    display: block;
+    width: 120px;
+    height: 36px;
+    font-size: 13.3333px;
+    border: 0;
+    background-color: var(--main);
+    color: #fff;
+    margin: 30px auto 60px;
+}
+
+
+
+/* 권한 관리 */
+#wrap > .content > article#rightSet{
+    height: 744px;
+}
+#wrap > .content > article#rightSet > form{
+    height: 100%;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content,
+#wrap > .content > article#rightSet div.right_rightList > .content{
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+#wrap > .content > article#rightSet nav.right_trainerList{
+    width: 280px;
+    height: calc(100% - 20px);
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    position: relative;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > h3{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0 10px;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 20px;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li{
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 500;
+    text-align: center;
+    line-height: 46px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--mainWWW);
+    background-color: white;
+    cursor: pointer;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li:hover{
+    background-color: ghostwhite;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li.active{
+    background-color: var(--mainWWW);
+}
+/* #wrap > .content > article#rightSet nav.right_trainerList > .content > li::after{
+    content: '';
+    width: 40%;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    transform: translateX(-50%);
+    background-color: var(--mainW);
+} */
+/* #wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul{
+    background-color: #fff;
+    position: relative;
+    padding: 12px 0;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li{
+    font-weight: 400;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li:hover{
+    background-color: ghostwhite;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li > input{display: none;}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li > input:checked + label{
+    background-color: var(--mainWWW);
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li > label{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: start;
+    padding: 0 12px;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li > label > p.nameInfo{
+    text-align: center;
+    white-space: nowrap;
+}
+#wrap > .content > article#rightSet nav.right_trainerList > .content > li > ul > li > label small{
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+} */
+
+
+#wrap > .content > article#rightSet div.right_rightList{
+    border: 2px solid var(--mainW);
+    border-radius: 4px;
+    float: left;
+    margin: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    width: calc(100% - 340px);
+    height: calc(100% - 20px);
+}
+#wrap > .content > article#rightSet div.right_rightList > h3{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 20px;
+    height: 40px;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content{
+    padding: 16px;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content > h4{
+    text-indent: 4px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content > fieldset{
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: auto;
+    border: 1px solid var(--mainWW);
+}
+
+#wrap > .content > article#rightSet div.right_rightList > div.content > fieldset > input{
+    display: none;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content > fieldset > input:checked + label{
+    background-color: var(--mainA);
+    border-color: var(--mainA);
+    font-weight: 300;
+    color: #fff;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content > fieldset > label{
+    width: calc(16.666666% - 8px);
+    height: 46px;
+    font-size: 13px;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--grayW);
+    text-align: center;
+    float: left;
+    line-height: 18px;
+    margin: 4px;
+    cursor: pointer;
+}
+#wrap > .content > article#rightSet div.right_rightList > div.content > button#grade_SubmitBtn{
+    display: block;
+    width: 120px;
+    height: 36px;
+    font-size: 13.3333px;
+    border: 0;
+    background-color: var(--main);
+    color: #fff;
+    margin: 30px auto;
+}
+
+
+
+
+
+/* 공지 관리 */
+section.content > article#notice{
+    height: 744px;
+}
+section.content > article#notice > nav{
+    width: 280px;
+    height: calc(100% - 20px);
+    border: 2px solid var(--mainW);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    position: relative;
+    overflow: auto;
+}
+section.content > article#notice > nav > h3{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 20px;
+    position: relative;
+}
+section.content > article#notice > nav > h3 > button{
+    
+}
+section.content > article#notice > nav li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    position: relative;
+    border-bottom: 1px solid #319ce41a;
+    transition: .1s background-color;
+    cursor: pointer;
+}
+button.del_Notice_pop{
+    position: absolute;
+    letter-spacing: 1px;
+    top: -46px;
+    right: 150px;
+    width: 120px;
+    height: 36px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #ce4a32;
+    color: #fff;
+}
+button.add_Notice_pop{
+    position: absolute;
+    letter-spacing: 1px;
+    top: -46px;
+    right: 20px;
+    width: 120px;
+    height: 36px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: var(--mainW);
+    color: #fff;
+}
+.notice{
+    border: 2px solid var(--mainW);
+    border-radius: 4px;
+    float: left;
+    margin: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+}
+.notice > h3{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--mainWW);
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    line-height: 20px;
+    height: 40px;
+    position: relative;
+}
+.notice > h3 > button{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid var(--main);
+    background-color: var(--mainWW);
+    color: rgb(243, 243, 243);
+    border-radius: 2px;
+    outline: 0;
+}
+.notice > h3 > button#notice_all_view_btn{
+    left: 5px;
+}
+.notice > h3 > button#notice_admin_view_btn{
+    left: 80px;
+}
+.notice > h3 > button.active{
+    background-color: rgb(250, 250, 250);
+    color: #000;
+}
+.notice > .con{
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    float: left;
+    padding: 0 5px;
+}
+.notice table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.notice table th{
+    height: 32px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    position: relative;
+    background-color: var(--mainW);
+    color: #fff;
+}
+.notice table td{
+    height: 29px;
+    font-size: 13.5px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+    position: relative;
+}
+.notice table label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -999999999999999%;
+}
+.notice table td.text{
+    text-align: left;
+    letter-spacing: .3px;
+}
+.notice table > tbody > tr{
+    background-color: #fff;
+    cursor: pointer;
+}
+.notice table > tbody > tr:hover{
+    background-color: #eee;    
+}
+
+
+
+
+
+
+
+
+/* 모달창 (팝업) */
+div.popup{
+    position: fixed;
+    min-width: 400px;
+    max-width: 1100px;
+    min-height: 200px;
+    max-height: 820px;
+    background-color: var(--fontW);
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    display: none;
+}
+div.popup > h2.title{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+
+/* X버튼 */
+div.popup > h2.title > button.closeBtn{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+div.popup > h2.title > button.closeBtn div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+div.popup > h2.title > button.closeBtn span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+div.popup > h2.title > button.closeBtn:hover span{
+    background-color: #eee;
+}
+div.popup > h2.title > button.closeBtn > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+div.popup > h2.title > button.closeBtn > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+/* /// */
+
+/* 팝업 내용 */
+div.popup > .content{
+    margin-top: 1px;
+    min-width: 650px;
+    max-height: calc(850px - 78px);
+    padding: 20px;
+    overflow: auto;
+}
+div.popup > .content > article{
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 15px;
+}
+div.popup > .content > article.btn{
+    border: 0;
+}
+div.popup > .content > article > div{
+    display: flex;
+    align-items: center;
+    padding: 10px 80px;
+    position: relative;
+}
+
+/* 임직원추가 팝업내용 */
+div.popup > .addTrainer{
+    width: 1000px;
+    padding: 30px 50px;
+    display: none;
+}
+div.popup > .addTrainer > article > div > p{
+    display: flex;
+    width: 68%;
+    align-items: center;
+    position: relative;
+}
+div.popup > .addTrainer > article > div > p label{
+    margin: 0 10px;
+}
+div.popup > .addTrainer #addTrainer_img{display:none;}
+div.popup > .addTrainer #addTrainer_img + label{
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px 0;
+    margin-left: 54px;
+    align-self: flex-end;
+    font-size: 14px;
+    width: 120px;
+    text-indent: 0;
+}
+div.popup > .addTrainer > article > div > label{
+    width: 150px;
+    width: 24%;
+    font-size: 15px;
+}
+div.popup > .addTrainer > article:first-of-type > div.row1{
+    padding-left: 100px;
+    margin-bottom: 20px;
+}
+div.popup > .addTrainer > article > div input,
+div.popup > .addTrainer > article > div select,
+div.popup > .addTrainer > article > div textarea{
+    width: 100%;
+    height: 38px;
+    border: 1px solid rgba(128,128,128,.4);
+    padding: 0 10px;
+}
+div.popup > .addTrainer > article > div input#addTrainer_address{
+    width: 100%;
+}
+div.popup > .addTrainer > article > div input[type="radio"]{
+    width: 14px;
+}
+div.popup > .addTrainer > article > div input[type="radio"] + label{
+    font-size: 14px;
+    margin-right: 26px;
+}
+div.popup > .addTrainer > article > div #addTrainer_level,
+div.popup > .addTrainer > article > div #work_start_date{
+    width: 140px;
+}
+div.popup > .addTrainer > article > div select#addTrainer_phone1{
+    width: 130px;
+}
+div.popup > .addTrainer > article > div select#addTrainer_level{
+    width: 200px;
+}
+div.popup > .addTrainer > article > div input#work_start_date{
+    width: 200px;
+}
+div.popup > .addTrainer > article > div input#addTrainer_phone2,
+div.popup > .addTrainer > article > div input#addTrainer_phone3{
+    width: 156px;
+}
+div.popup > .addTrainer > article > div input#addTrainer_birth{
+    width: 200px;
+    letter-spacing: 1px;
+}
+div.popup > .addTrainer > article > div textarea{
+    width: 100%;
+    height: 74px;
+    padding: 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    resize: none;
+}
+
+div.popup > .addTrainer > article.insa > div{
+    justify-content: flex-start;
+}
+
+div.popup > .content.addTrainer h3{
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+div.popup > .content.addTrainer .row1 > img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+div.popup > .content.addTrainer #pay-month{
+    padding: 0 40px 0 10px;
+}
+
+/* 금여정보 */
+div.popup > .addTrainer > article.money-set #pay-my,
+div.popup > .addTrainer > article.money-set #pay-month{
+    width: 300px;
+}
+div.popup > .addTrainer > article.money-set .row2 span{
+    display: flex;
+    align-items: center;
+}
+
+
+/* 수당 정보 */
+div.popup > .addTrainer > article.class-pay-set > div{
+    margin-bottom: 10px;
+    display: block;
+}
+div.popup > .addTrainer > article.class-pay-set > div > h4{
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    margin-bottom: 6px;
+
+}
+div.popup > .addTrainer > article.class-pay-set > div > p{
+    margin: 20px 0;
+}
+div.popup > .addTrainer > article.class-pay-set > div > p > input[type="text"]{
+    width: 200px;
+}
+div.popup > .addTrainer > article.class-pay-set > div > p input[type="checkbox"]{
+    width: 14px;
+}
+
+div.popup > .addTrainer > article.class-pay-set div.info{
+    border: 1px solid rgba(128,128,128,.1);
+    background-color: #eee;
+    font-size: 13px;
+    padding: 10px 20px;
+    line-height: 30px;
+    color: #333;
+}
+div.popup > .addTrainer > article.class-pay-set div.info > p{
+    width: 100%;
+    margin: 14px 0;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo,
+div.popup > .addTrainer > article.class-pay-set div.group{
+    padding: 10px 30px;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo > p > span{
+    display: flex;
+    align-items: center;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show,
+div.popup > .addTrainer > article.class-pay-set div.group-no-show{
+    display: flex;
+    padding: 10px 0;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show > label,
+div.popup > .addTrainer > article.class-pay-set div.group-no-show > label{
+    font-size: 14px;
+    text-indent: 10px;
+    padding-top: 6px;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show > div.select > p,
+div.popup > .addTrainer > article.class-pay-set div.group-no-show > div.select > p{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 13.7px;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show > div.select > p label,
+div.popup > .addTrainer > article.class-pay-set div.group-no-show > div.select > p label{
+    font-size: inherit;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show > div.select > p > input,
+div.popup > .addTrainer > article.class-pay-set div.group-no-show > div.select > p > input{
+    margin: 0 10px 0 0;
+}
+div.popup > .addTrainer > article.class-pay-set div.solo-no-show > div.select > p input[type="text"],
+div.popup > .addTrainer > article.class-pay-set div.group-no-show > div.select > p input[type="text"]{
+    width: 70px;
+}
+
+
+/* 직급 추가 */
+div.popup > .addLevel > p{
+    display: flex;
+    align-items: center;
+    padding: 20px 0 40px;
+    /* margin: 10px 0; */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .addLevel label{
+    width: 100px;
+    display: inline-block;
+    color: #333;
+    font-size: 15px;
+}
+div.popup > .addLevel input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+
+/* 직급 편집 */
+div.popup > .setLevel > ul{
+    padding: 10px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .setLevel > ul > li{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+div.popup > .setLevel input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+div.popup > .setLevel input + button{
+    height: 34px;
+    width: 50px;
+    color: #fff;
+    border: 1px solid rgb(201, 38, 38);
+    background-color: rgb(214, 64, 64);
+    margin-left: 10px;
+}
+
+/* 카테고리 추가 */
+div.popup > .addCategory > p{
+    display: flex;
+    align-items: center;
+    padding: 20px 0 40px;
+    /* margin: 10px 0; */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .addCategory label{
+    width: 150px;
+    display: inline-block;
+    color: #333;
+    font-size: 15px;
+}
+div.popup > .addCategory input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+
+div.popup > .addCategorySmall > p{
+    display: flex;
+    align-items: center;
+    padding: 20px 0 40px;
+    /* margin: 10px 0; */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .addCategorySmall label{
+    width: 180px;
+    display: inline-block;
+    color: #333;
+    font-size: 15px;
+}
+div.popup > .addCategorySmall input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+
+
+/* 카테고리 편집 */
+div.popup > .setCategory > ul{
+    padding: 10px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .setCategory > ul > li > p{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+div.popup > .setCategory > ul > li > ul{
+    padding: 4px 0 20px;
+}
+div.popup > .setCategory > ul > li > ul > li{
+    padding: 6px 0px 6px 30px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+div.popup > .setCategory > ul > li > ul > li::before{
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(128,128,128,.3);
+    border-right: transparent;
+    border-top: transparent;
+}
+div.popup > .setCategory > ul > li > ul > li > input{
+    width: 490px;
+}
+div.popup > .setCategory > ul > li > ul > li > button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: 0;
+    border: 1px solid rgb(231, 93, 93);
+    background-color: rgba(231, 93, 93, 0.925);
+}
+div.popup > .setCategory > ul > li > ul > li > button:hover{
+    background-color: rgb(214, 64, 64);
+}
+div.popup > .setCategory > ul > li > ul > li > button > i{
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.popup > .setCategory input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+div.popup > .setCategory input + button{
+    height: 34px;
+    width: 50px;
+    color: #fff;
+    border: 1px solid rgb(201, 38, 38);
+    background-color: rgb(214, 64, 64);
+    margin-left: 10px;
+}
+
+
+/* 이용권 추가 */
+div.popup > .addItem > .body > div{
+    padding: 6px 0;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+div.popup > .addItem > .body > div > label:first-of-type{
+    display: inline-block;
+    width: 180px;
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+}
+div.popup > .addItem > .body > div > label[for="itemFrm_date"]::after,
+div.popup > .addItem > .body > div > label[for="itemFrm_count"]::after{
+    content: '';
+    position: absolute;
+    top: calc(50% - 16px);
+    right: -100px;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+}
+div.popup > .addItem > .body > div .l {width: 300px;}
+div.popup > .addItem > .body > div .m {width: 180px;margin: 0 10px 0 0;}
+div.popup > .addItem > .body > div .s {width: unset;margin: 0 18px 0 6px;}
+div.popup > .addItem > .body > div .ms {width: 100px;margin: 0 4px 0 0px;}
+div.popup > .addItem > .body > div input,
+div.popup > .addItem > .body > div select{
+    height: 32px;
+    transition: .1s;
+    outline: 0;
+    border: 1px solid rgba(128,128,128,.4);
+    padding: 0 6px;
+}
+div.popup > .addItem > .body > div input:focus,
+div.popup > .addItem > .body > div select:focus{
+    border-width: 2px;
+    border-color: var(--mainW);
+}
+div.popup > .addItem > .body > div > p{
+    display: inline-block;
+}
+
+div.popup > .addNoticeCategory > p{
+    display: flex;
+    align-items: center;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .addNoticeCategory > p > label{
+    width: 150px;
+    display: inline-block;
+    color: #333;
+    font-size: 15px;
+}
+div.popup > .addNoticeCategory > p > input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+
+/* 공지 카테고리 편집 */
+div.popup > .setNoticeCategory > ul{
+    padding: 10px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+div.popup > .setNoticeCategory > ul > li{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+div.popup > .setNoticeCategory > ul > li > input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+div.popup > .setNoticeCategory > ul > li > button{
+    height: 34px;
+    width: 50px;
+    color: #fff;
+    border: 1px solid rgb(201, 38, 38);
+    background-color: rgb(214, 64, 64);
+    margin-left: 10px;
+}
+
+/* 공지 등록 */
+div.popup > .addNotice > article.body{
+    padding: 0 20px;
+    padding-bottom: 30px;
+}
+div.popup > .addNotice p{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+div.popup > .addNotice p > label{
+    width: 30%;
+    font-size: 14px;
+}
+div.popup > .addNotice p > select,
+div.popup > .addNotice p > input,
+div.popup > .addNotice p > textarea{
+    width: 100%;
+    height: 38px;
+    border: 1px solid rgba(128,128,128,.4);
+    padding: 0 10px;
+    outline: none;
+    transition: .1s;
+}
+div.popup > .addNotice p > select:focus,
+div.popup > .addNotice p > input:focus,
+div.popup > .addNotice p > textarea:focus{
+    border-width: 2px;
+}
+div.popup > .addNotice p > input{
+    border: none;
+}
+div.popup > .addNotice p > textarea{
+    padding: 10px;
+    height: 150px;
+    resize: none;
+}
+
+/* 팝업버튼 */
+div.popup > .content > article.btn{
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.popup > .content > article.btn > button{
+    width: 100px;
+    margin: 0 4px;
+    height: 36px;
+    border: 0;
+}
+div.popup > .content > article.btn > button.submit{
+    background-color: var(--mainW);
+    color: #fff;
+}
+div.popup > .content > article.btn > button.close{
+    background-color: var(--gray);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px){
+    .trainer > ul > li > ul > li{
+        width: calc(50% - 8px);
+    }
+}

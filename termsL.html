@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/termsL.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/termsL.js"></script>
+</head>
+<body>
+    <h1>
+        <a href="login.html">Dr.Care Union</a>
+        <p>관리자 이용약관 / 개인정보 수집 및 이용</p>
+    </h1>
+    <form action="#" method="POST" name="termsFrm" autocomplete="off">
+        <div>
+            <label for="termsText1">닥터케어유니온 이용약관</label>
+            <textarea name="termsText1" id="termsText1" class="termsText" readonly></textarea>
+            <div>
+                <input type="checkbox" name="terms1Check" id="terms1Check" class="termsCheck">
+                <label for="terms1Check">이용약관에 동의합니다.</label>
+            </div>
+        </div>
+        <div>
+            <label for="termsText2">닥터케어유니온 개인정보동의</label>
+            <textarea name="termsText2" id="termsText2" class="termsText" readonly></textarea>
+            <div>
+                <input type="checkbox" name="terms2Check" id="terms2Check" class="termsCheck">
+                <label for="terms2Check">개인정보수집 및 이용에 동의합니다.</label>
+            </div>
+        </div>
+        <p>
+            <input type="checkbox" name="termsAllCheck" id="termsAllCheck">
+            <label for="termsAllCheck">위 사항을 전제 동의합니다.</label>
+        </p>
+        <div class="btnSet">
+            <button id="termsNo" type="button">취 소</button>
+            <button id="termsYes" type="button">확 인</button>
+        </div>
+    </form>
+    <div class="termsTemp1 hid"></div>
+    <div class="termsTemp2 hid"></div>
+</body>
+</html>

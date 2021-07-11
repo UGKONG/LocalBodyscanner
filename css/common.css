@@ -1,0 +1,674 @@
+@charset "utf-8";
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.14.0/css/all.css');
+@font-face{
+    font-family: 'NanumSR';
+    src: url(../font/NanumSquareRoundR.ttf);
+}
+
+/* RESET */
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+*::-webkit-scrollbar{
+    width: 5px;
+    height: 0;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #ddd;
+    width: 100%;
+    border-radius: 10px;
+}
+li{list-style: none;}
+a{text-decoration: none; color: inherit; font-family: inherit;}
+button{border: 1px solid black; background-color: #fff; cursor: pointer;}
+input{border: 1px solid rgba(0, 0, 0, 0.4);}
+input:focus{border: 2px;}
+.hid{display: none;}
+
+.color-blue{color: black;}
+.color-green{color: rgb(22, 133, 70);}
+.color-purple{color: slateblue;}
+.color-orange{color: orange;}
+.color-gray{color: gray;}
+
+:root{
+    
+    /* 폰트색 */
+    --fontW: #fff;
+    --fontB: #111;
+    --fontGW: #333;
+    --fontG: #666;
+    --fontR: #fa5656;
+
+    /* 주조색 */
+    --mainB: #0e5a30;
+    --main: #186b3d;
+    --mainW: #36925f;
+    --mainWW: #76af90;
+    
+    --mainWWW: #d9f5e5;
+    --mainA: #217346a1;
+
+    --star: #669900;
+
+    /* 보조색 */
+    --sub: rgb(250, 250, 250);
+    --gray: rgb(128,128,128);
+    --grayW: rgb(214, 214, 214);
+    --grayWW: rgb(238, 238, 238);
+}
+
+.require::before{
+    content: '*';
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 18px;
+    transform: translateY(4px);
+}
+
+/* MAIN */
+html{width: 100%; height: auto; min-height: 100vh;}
+body::-webkit-scrollbar{height: 0;}
+body{
+    /* background-color: #e0e3ee; */
+    position: relative;
+    width: 100%; 
+    min-width: 1600px;
+    min-height: 770px;
+    height: 100vh;
+    overflow: hidden;
+    /* transform: translateY(-26px); */
+    /* background-image: url(../img/bgBox.png);
+    background-size: 1200px;
+    background-position: -180px -440px; */
+}
+
+/* 흰색 배경 */
+#wrap{
+    width: 100%; min-width: 1400px;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* 컨텐츠 */
+body > div#wrap > section.content{
+    position: relative;
+    height: calc(100% - 90px);
+    overflow: auto;
+}
+
+/* 해더 */
+header{
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0 0px 10px #00000033;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* MAIN LOGO */
+header > a{
+    display: block;
+    width: 280px; 
+    height: 100%;
+    float: left;
+}
+header > a > div.logobg{
+    position: relative;
+    background-color: transparent;
+    color: #186b3d;
+    width: 280px; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-right: 1px solid rgba(128,128,128,.2);
+}
+header > a > div.logobg:after{
+    content: '회원관리 프로그램';
+    font-size: 12px;
+    position: absolute;
+    letter-spacing: 1px;
+    bottom: 18px;
+}
+header > a > div.logobg > h1{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* NAV */
+header > nav{
+    float: left;
+    height: 100%;
+    position: relative;
+}
+header > nav > ul{
+    overflow: auto;
+    height: 100%;
+}
+header > nav > ul > li{
+    float: left;
+    height: 100%;
+}
+header > nav > ul > li > a{
+    display: block;
+    height: 100%;
+    padding: 0 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #186b3d;
+    position: relative;
+    font-weight: 500;
+}
+header > nav > ul > li > a:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main);
+    display: none;
+}
+header > nav > ul > li > a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #186b3d;
+    transition: .7s;
+    opacity: 0;
+}
+header > nav > ul > li > a:hover:before{
+    width: 100%;
+    opacity: 1;
+}
+
+/* 상단 검색input, 유저 아이콘, 환경설정아이콘 */
+header > div.topIcon{
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
+header > div.topIcon .msg{
+    margin: 7px;
+}
+header > div.topIcon .msg > i{
+    font-size: 28px;
+    padding: 4px;
+    color: #0e5a30;
+    cursor: pointer;
+    display: none;
+}
+header > div.topIcon .msg > p:nth-of-type(1){
+    font-size: 14px; 
+    color: #186b3d;
+}
+header > div.topIcon .msg > p:nth-of-type(2){
+    font-size: 18px; font-weight: 600;
+    color: #186b3d;
+}
+header > div.topIcon .msgPlus{
+    background-size: contain;
+    padding: 2px 6px;
+    background-color: #186b3d;
+    border: 0;
+    color: #fff;
+    font-size: 13.3333px;
+}
+header > div.topIcon .loginUser{
+    width: 34px;height: 34px;
+    background-image: url(../img/user.png);
+    border: 1px solid #666;
+    border-radius: 50%;
+    background-size: contain;
+    margin: 7px;
+}
+header > div.topIcon > form{
+    position: relative;
+    margin: 7px;
+}
+header > div.topIcon > form > label{
+    position: absolute;
+    color: #186b3d;
+    font-size: 15px;
+    padding: 4px 6px;
+}
+header > div.topIcon > form > input{
+    width: 170px;
+    height: 32px;
+    border: 1px solid #186b3d;
+    outline: 0;
+    font-size: 13px;
+    color: #666;
+    padding: 0 36px 0 6px;
+    transition: .3s;
+    border-radius: 2px;
+}
+header > div.topIcon > form > button{
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 32px; height: 32px;
+    background-color: #186b3d;
+    background-image: url(../img/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    text-indent: -999999px;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+/* 상단 소메뉴칸 */
+div.top_sMenu{
+    height: 76px;
+    padding: 0 16px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* 제작사 */
+address{
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    color: #222;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+    transform: translateY(-100%);
+}
+
+/* 유저정보 */
+div.loginUser_info{
+    position: absolute;
+    z-index: 99;
+    width: 200px; height: 102px;
+    background-color: #fff;
+    border: 2px solid var(--main);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    top: 110%; right: 0;
+    padding: 14px;
+    display: none;
+}
+div.loginUser_info::after{
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-top: 2px solid #0065b3;
+    border-left: 2px solid #0065b3;
+    position: absolute;
+    right: 40px; bottom: calc(100% - 7px);
+    border-top-left-radius: 4px;
+    transform: rotate(45deg);
+}
+div.loginUser_info > p:hover{
+    cursor: pointer; text-decoration: underline;
+}
+div.loginUser_info > p:nth-of-type(1):hover + p{
+    text-decoration: underline;
+}
+div.loginUser_info > p:nth-of-type(1){
+    font-size: 18px; color: var(--main);
+    line-height: 16px;
+}
+div.loginUser_info > p:nth-of-type(2){
+    font-size: 16px; color: var(--main);
+}
+div.loginUser_info > p:nth-of-type(2):hover{
+    text-decoration: none; cursor: default;
+}
+div.loginUser_info > p:nth-of-type(3){
+    font-size: 18px; color: #4e4e4e; margin-top: 14px;
+    line-height: 16px;
+}
+div.loginUser_info > p:nth-of-type(4){
+    font-size: 15px; color: #4e4e4e;
+}
+
+
+/* 회원검색창 */
+div.mSearch_container{
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999999999999999999999999999999999999999999;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+div.mSearch_container > .col-01{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.mSearch_container > .col-01 > label{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 24px;
+    height: 24px;
+}
+div.mSearch_container > .col-01 > div.x_btn{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+div.mSearch_container > .col-01 > div.x_btn:hover > span{
+    background-color: #222;
+}
+div.mSearch_container > .col-01 > div.x_btn > span{
+    position: absolute;
+    left: 0;
+    top: calc(50% - 0.8px);
+    width: 20px;
+    height: 1.6px;
+    background-color: #666;
+    border-radius: 2px;
+    transition: background-color .2s;
+}
+div.mSearch_container > .col-01 > div.x_btn > span:first-of-type{
+    transform: rotate(45deg);
+}
+div.mSearch_container > .col-01 > div.x_btn > span:last-of-type{
+    transform: rotate(-45deg);
+}
+div.mSearch_container > input{
+    width: 100%;
+    height: 32px;
+    margin: 14px 0;
+    padding: 0 4px;
+    border: 1px solid var(--mainW);
+    border-radius: 2px;
+}
+
+div.mSearch_container > ul.name_list{
+    width: 100%;
+    height: 145px;
+    z-index: 99999999999999;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px solid var(--mainWW);
+}
+div.mSearch_container > ul.name_list > li{
+    border-bottom: 1px solid var(--mainWW);
+    padding: 0px 4px;
+    height: 36px;
+    font-size: 13px;
+    line-height: 36px;
+    color: #333;
+    cursor: pointer;
+    /* display: none; */
+}
+div.mSearch_container > ul.name_list > li:hover{
+    background-color: var(--mainWW); color: #fff;
+}
+div.mSearch_container > ul.name_list > li:last-of-type{
+    /* border: 0; */
+}
+.mSearch_container > ul.name_list > li{
+    display: flex;
+    justify-content: space-between;
+}
+.mSearch_container > ul.name_list > li > div:last-of-type{
+    display: flex;
+    flex-flow: column;
+
+}
+.mSearch_container > ul.name_list > li > div:last-of-type > p{
+    height: 50%;
+    line-height: 18px;
+    font-size: 11px;
+    text-align: right;
+}
+
+
+/* 메신저 */
+.Union-talk{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    overflow: hidden;
+    background-color: var(--mainW);
+    color: #fff;
+    font-size: 24px;
+    z-index: 99;
+    cursor: pointer;
+    transition: .2s;
+    line-height: 48px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+.Union-talk > form{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.Union-talk + .talk-pin{
+    position: fixed;
+    z-index: 99;
+    font-size: 10px;
+    background-color: rgb(248, 59, 59);
+    color: #fff;
+    border-radius: 100px;
+    padding: 0 4px 1px 5px;
+    letter-spacing: 1px;
+    min-width: 18px;
+    width: auto;
+    height: 18px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    bottom: 54px;
+    left: 18px;
+    opacity: 1;
+    display: none;
+}
+.Union-talk > form > i{
+    padding: 13px 13px;
+}
+.Union-talk > form > i::after{
+    content: 'Union Talk';
+    position: relative;
+    top: -2px;
+    margin-left: 12px;
+    font-size: 16px;
+    right: 0;
+    white-space: nowrap;
+}
+
+.Union-talk:hover{
+    width: 150px;
+}
+
+/* 활성화 */
+.Union-talk.active{
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    cursor: default;
+}
+.Union-talk.active div.Union-talk-text{
+    height: 452px;
+    position: relative;
+}
+.Union-talk.active div.Union-talk-text > div.x-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -40px;
+    right: 6px;
+    cursor: pointer;
+}
+.Union-talk.active div.Union-talk-text > div.x-button:hover span{
+    background: #fff;
+}
+.Union-talk.active div.Union-talk-text > div.x-button > div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.Union-talk.active div.Union-talk-text > div.x-button > div > span{
+    width: 60%;
+    height: 3px;
+    border-radius: 100px;
+    background-color: rgb(219, 219, 219);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.Union-talk.active div.Union-talk-text > div.x-button > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.Union-talk.active div.Union-talk-text > div.x-button > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+.Union-talk.active div.Union-talk-text > div#Union_talk_text{
+    background-color: #fff;
+    color: #111;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 10px;
+    width: 380px;
+    height: 390px;
+    resize: none;
+    border: 0;
+    padding: 4px;
+    outline: 0;
+    cursor: text;
+}
+.Union-talk.active div.Union-talk-text > div#Union_talk_text > p{
+    margin-bottom: 6px;
+}
+.Union-talk.active div.Union-talk-text > input{
+    width: 380px;
+    height: 32px;
+    border: 0;
+    outline: 0;
+    padding: 0 6px;
+    margin: 0 10px;
+    transform: translateY(-7px);
+}
+.Union-talk.active div.Union-talk-text > button{
+    position: absolute;
+    width: 50px;
+    height: 32px;
+    border: 0;
+    bottom: 24px;
+    background-color: rgb(240, 144, 0);
+    color: #fff;
+    right: 10px;
+    outline: 0;
+}
+.Union-talk.active div.Union-talk-text > p{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: 12px;
+    line-height: 27px;
+}
+.Union-talk.active + .talk-pin{
+    opacity: 0;
+}
+
+
+
+.dark_div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 125%;
+    height: 125%;
+    display: none;
+}
+
+
+/* @media screen and (max-width: 1500px){
+    header > div.topIcon .msg{
+        position: relative;
+    }
+    header > div.topIcon .msg > i{
+        display: block;
+        position: relative;
+        margin-bottom: -6px;
+    }
+    header > div.topIcon .msg > p:first-of-type{display: none;}
+    header > div.topIcon .msg > p > button{display: none;}
+    header > div.topIcon .msg > p:last-of-type{
+        display: block;
+        top: 90%;
+        left: 50%;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    #wrap > header form input#searchVal{width: 150px;}
+} */
+
+@media screen and (max-width: 1200px){
+
+}
+
+/* <alertApp> */
+#alertApp .wrap::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #186b3d;
+}
+#alertApp .wrap i{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    float: left;
+}
+#alertApp .wrap .text{
+    float: left;
+    width: calc(100% - 80px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    letter-spacing: 1px;
+    word-break: break-all;
+    font-size: 16px;
+}
+#alertApp .wrap i.fas.fa-check{color: #186b3d;}
+#alertApp .wrap i.fas.fa-exclamation-triangle{color: #e68a00;}
+#alertApp .wrap i.far.fa-times-circle{color: #ff3333;}
+#alertApp .wrap i.fas.fa-question{color: #0099ff;}

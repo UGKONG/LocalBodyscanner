@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+body{
+    background-color: #fff;
+    background-image: none;
+    position: relative;
+    padding: 0;
+    min-height: 930px;
+}
+h1{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--main);
+    font-family: 'NanumSquareRoundR';
+}
+h1 > p{
+    font-size: 20px;
+    font-family: inherit;
+    margin-top: 20px;
+}
+
+nav{
+    width: 800px;
+    height: 50px;
+    margin: 50px auto 150px;
+
+}
+nav > ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav > ul > li{
+    width: 25%;
+    height: 100%;
+    padding: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #99999966;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 3px solid #99999966;
+}
+/*  */
+nav > ul > li.active{
+    color: var(--main);
+    border-bottom: 4px solid var(--main);
+}
+/*  */
+nav > ul > li:not(:last-of-type){
+    margin-right: 8px;
+}
+form{
+    width: 600px;
+    margin: 0 auto 150px;
+}
+form > div{
+    display: flex;
+    overflow: hidden;
+    height: 70px;
+    align-items: center;
+}
+form > div > p{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+}
+form span.alert{
+    width: 450px;
+    height: 20px;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: red;
+    border: 0;
+    display: flex;
+    overflow: hidden;
+}
+form span.alert > span{
+    width: 154px;
+}
+form > div label,
+form > div h3{
+    width: 150px;
+    font-size: 18px;
+    font-weight: 400;
+}
+label[for="JOIN_EMAIL_DOMAIN"]{
+    width: unset;
+    padding: 0 6px;
+}
+form > div input,
+form > div select{
+    border: 1px solid var(--main);
+    transition: all .1s;
+    font-size: 15px;
+    height: 46px;
+    outline: 0;
+}
+form > div input{
+    width: 100%;
+    letter-spacing: 2px;
+    padding: 0 12px;
+}
+form > div select{
+    color: #777;
+    padding: 0 14px;
+    letter-spacing: 2px;
+}
+form > div.name button,
+form > div.id button{
+    width: 100px;
+    height: 46px;
+    border: 1px solid var(--main);
+    background-color: var(--main);
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 14.5px;
+}
+#JOIN_NAME, #JOIN_ID{
+    width: 334px;
+}
+#CENTER_NAME{
+    width: 236px;
+}
+#CENTER_CODE{
+    width: 200px;
+}
+#JOIN_PHONE1, #JOIN_PHONE2{
+    width: 156px;
+    
+}
+form > div input:focus, form > div select:focus{
+    border: 2px solid var(--main);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+/*  */
+#JOIN_PHONE1, #JOIN_PHONE2{
+    text-align: center; letter-spacing: 5px;
+}
+/* 성별 */
+form > div.gender > p > span{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+form > div.gender > p > span input{
+    width: 50%;
+    height: 24px;
+}
+form > div.gender > p > span input:focus{
+    box-shadow: none;
+}
+
+/* 이름, 연락처 구분선 */
+form > span{
+    display: block;
+    height: 30px;
+    border-bottom: 1px solid #0477c450;
+    margin: 0 0 10px;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+form > h2{
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+form > h2.Infomation{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* 생년월일 */
+div.year > p > label{
+    width: 30px;
+}
+#JOIN_YEAR{width: 120px;}
+#JOIN_MONTH, #JOIN_DAY{width: 100px;}
+
+/* 주소 */
+div.address{
+    height: auto;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+div.address > P{
+    flex-wrap: wrap;
+}
+label[for="JOIN_ADDRESS1"]{
+    line-height: 46px;
+}
+#JOIN_ADDRESS1{
+    width: 180px;
+}
+#JOIN_ADDRESS2,
+#JOIN_ADDRESS3{
+    width: 120px;
+}
+#JOIN_ADDRESS4{
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+
+/* 등록일 */
+form > div.joinTime span#date_time{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+/* 전송버튼 */
+form > div.join_btn{
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0 0;
+}
+form > div.join_btn > button{
+    width: 150px;
+    height: 40px;
+    margin: 6px;
+    font-size: 15px;
+    letter-spacing: 4px;
+    border: 1px solid var(--main);
+}
+form > div.join_btn > button#JOIN_submitBtn{
+    background-color: var(--main);
+    color: #fff;
+    border: 1px solid var(--main);
+}
+address{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

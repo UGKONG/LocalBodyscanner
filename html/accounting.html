@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회계</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/Array.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/accounting.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/accounting.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <a href="index.php">
+                <div class="logobg">
+                    <h1>Dr. Care Union</h1>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">대쉬보드</a></li>
+                    <li><a href="members.html">멤버스</a></li>
+                    <li><a href="scheduler.html">스케줄러</a></li>
+                    <li><a href="item.html">상품</a></li>
+                    <li><a href="chart.html">통계</a></li>
+                    <li><a href="accounting.html">회계</a></li>
+                    <li><a href="rocker.html">라커</a></li>
+                    <li><a href="history.html">히스토리</a></li>
+                    <li><a href="setting.html">설정</a></li>
+                </ul>
+            </nav>
+
+            <div class="topIcon">
+                <form action="#" name="search_frm" method="GET">
+                    <label for="searchVal">검색</label>
+                    <input type="text" name="searchVal" id="searchVal">
+                    <button type="submit" name="searchBtn" id="searchBtn">검색</button>
+                </form>
+                <!-- 유저정보 -->
+                <a href="">
+                    <div class="loginUser"></div>
+                </a>
+                <div class="loginUser_info">
+                    <p>센터 관리자</p>
+                    <p>홍길동</p>
+                    <p>로그아웃</p>
+                </div>
+            </div>
+        </header>
+        <section class="content">
+            <h2 class="hid">컨텐츠 영역</h2>
+            <div class="top_sMenu">
+                <article class="Sorting">
+                    <p>
+                        <select name="centerSorting" id="centerSorting">
+                            <option value="">센터선택</option>
+                        </select>
+                        <label for="centerSorting" hidden>센터선택</label>
+
+                        <select name="trainerSorting" id="trainerSorting">
+                            <!-- 강사List _ JS -->
+                        </select>
+                        <label for="trainerSorting" hidden>강사선택</label>
+
+                        <select name="payHowSorting" id="payHowSorting">
+                            <option value="">모든결제수단</option>
+                            <option value="card">카드결제</option>
+                            <option value="cash">현금결제</option>
+                            <option value="account">계좌이체</option>
+                        </select>
+                        <label for="trainerSorting" hidden>결제수단</label>
+
+                        <select name="yetPayment_or_No" id="yetPayment_or_No">
+                            <option value="all">전체내역</option>
+                            <option value="yet">미수내역</option>
+                        </select>
+                    </p>
+                    <p>
+                        <select name="dateSortingEz" id="dateSortingEz">
+                            <option value="today">오늘</option>
+                            <option value="yesterday">어제</option>
+                            <option value="lastday7">7일전</option>
+                            <option value="lastday30">30일전</option>
+                            <option value="thismonth">당월</option>
+                            <option value="lastmonth">전월</option>
+                            <option value="thisyear">당해</option>
+                            <option value="lastyear">전해</option>
+                        </select>
+                        <input type="date" name="dateSorting1" id="dateSorting1">
+                        <label for="dateSorting1">부터</label>
+                        <input type="date" name="dateSorting2" id="dateSorting2">
+                        <label for="dateSorting2">까지</label>
+                    </p>
+                    <button id="sortingBtn">검색</button>
+                </article>
+            </div>
+
+            <article class="container">
+                <div class="chartCard">
+                    <article class="calcEl0">
+                        <div>
+                            <h3 class="default">총 판매금액<i class="fas fa-credit-card"></i></h3>
+                            <div class="con" id="Total-pay">
+                                <p class="default"><span data-pay="2000000">2,000,000</span>원</p>
+                                <div class="progressBarBorder default">
+                                    <p class="progressBar" style="width: 100%;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="calcEl1">
+                        <div>
+                            <h3>총 결제금액<i class="fas fa-user-check"></i></h3>
+                            <div class="con" id="allTotal-pay">
+                                <p><span data-pay="400" data-count="2300000">2,300,000</span>원</p>
+                                <div class="progressBarBorder">
+                                    <p class="progressBar" style="width: 100%;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <p class="equals"><i class="fas fa-minus"></i></p>
+                    <article class="calcEl2">
+                        <div>
+                            <h3 class="default">총 미수금액<i class="fas fa-credit-card"></i></h3>
+                            <div class="con" id="Total-yet">
+                                <p class="default"><span data-pay="300000">300,000</span>원</p>
+                                <div class="progressBarBorder default">
+                                    <p class="progressBar" style="width: 100%;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <p class="equals"><i class="fas fa-minus"></i></p>
+                    <article class="calcEl3">
+                        <div>
+                            <h3 class="default">총 환불금액<i class="fas fa-credit-card"></i></h3>
+                            <div class="con" id="Total-re">
+                                <p class="default"><span data-pay="100000">100,000</span>원</p>
+                                <div class="progressBarBorder default">
+                                    <p class="progressBar" style="width: 100%;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <p class="equals"><i class="fas fa-equals"></i></p>
+                    <article class="calcEl4">
+                        <div>
+                            <h3 class="default">총 수익금액<i class="fas fa-credit-card"></i></h3>
+                            <div class="con" id="Total-true">
+                                <p class="default"><span data-pay="1900000">1,900,000</span>원</p>
+                                <div class="progressBarBorder default">
+                                    <p class="progressBar" style="width: 100%;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="chartListHeader">
+                    <div class="view">
+                        <div id="sortingChk">
+                            <!-- js -->
+                        </div>
+                    </div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>결제일시</th>
+                                <th>회원명</th>
+                                <th>연락처</th>
+                                <th>판매상품</th>
+                                <th>상태</th>
+                                <th>정가</th>
+                                <th>할인</th>
+                                <th>판매가</th>
+                                <th>결제분류</th>
+                                <th>결제수단</th>
+                                <th>결제금액</th>
+                                <th>잔여미수금</th>
+                                <th>현금영수증</th>
+                                <th>환불수단</th>
+                                <th>환불 지급액</th>
+                                <th>담당자</th>
+                                <th>메모</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="List">
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-1111-6666</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>카드</td>
+                                <td>1,200,000</td>
+                                <td>박해성</td>
+                                <td><button class="memo">메모보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-2222-1111</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>현금</td>
+                                <td>1,000,000원</td>
+                                <td>500,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-3333-1111</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>C</td>
+                                <td>현금</td>
+                                <td>1,200,000</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-4444-6666</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>카드<br>현금</td>
+                                <td>1,000,000원<br>400,000원</td>
+                                <td>100,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-2222-1111</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>카드</td>
+                                <td>1,400,000원</td>
+                                <td>100,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td><button class="memo">메모보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-4444-3333</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>현금</td>
+                                <td>1,500,000원</td>
+                                <td>-</td>
+                                <td>Y</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td><button class="memo">메모보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-5555-1111</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>C</td>
+                                <td>현금</td>
+                                <td>1,200,000</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-1111-6666</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>카드</td>
+                                <td>1,400,000원</td>
+                                <td>100,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-6666-1111</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>카드</td>
+                                <td>500,000원</td>
+                                <td>1,000,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2020-12-01</td>
+                                <td>전상욱</td>
+                                <td>010-1122-3333</td>
+                                <td>PT 30회</td>
+                                <td>판매</td>
+                                <td>1,500,000원</td>
+                                <td>0원</td>
+                                <td>1,500,000원</td>
+                                <td>결제</td>
+                                <td>카드</td>
+                                <td>0원</td>
+                                <td>1,500,000원<br> <button class="yetPaymentBtn">미수금결제</button></td>
+                                <td>N</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>박해성</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            
+        </section>
+
+    </div>
+
+
+    <address>Copyright &copy; Liansoft. Allright Reserved. 2020</address>
+    
+    <div class="dark_div"></div>
+
+    <div id="popMemo">
+        <h2>
+            <span>요약보기</span>
+            <button class="closeBtn">
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </h2>
+        <div class="con">
+            <div class="memoDate">
+                <h3>결제일시</h3>
+                <span>2020-12-01</span>
+            </div>
+            <div class="memoMemberName">
+                <h3>회원명</h3>
+                <span>전상욱</span>
+            </div>
+            <div class="memoPhone">
+                <h3>연락처</h3>
+                <span>010-1111-2222</span>
+            </div>
+            <div class="memoTeacher">
+                <h3>담당자</h3>
+                <span>박해성</span>
+            </div>
+
+            <h2>상품정보</h2>
+            <hr>
+            <div class="memoItemName">
+                <h3>판매상품</h3>
+                <span>PT 30회</span>
+            </div>
+            <div class="memoState">
+                <h3>상 태</h3>
+                <span>판매</span>
+            </div>
+            <div class="memoAmount">
+                <h3>정 가</h3>
+                <span>1,500,000원</span>
+            </div>
+            <div class="memoSaleAmount">
+                <h3>할 인</h3>
+                <span>0원</span>
+            </div>
+            <div class="memoAfterAmount">
+                <h3>판매가</h3>
+                <span>1,500,000원</span>
+            </div>
+
+            <h2>메 모</h2>
+            <hr>
+            <div class="memoMemo">
+                <p>
+                    메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다.
+                    메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다.
+                    메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다. 메모입니다.
+                </p>
+            </div>
+            <div class="button">
+                <button>닫 기</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

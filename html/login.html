@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="js/login.js"></script>
+    <title>Dr. Care Union:Login</title>
+</head>
+<body>
+    
+    <div class="dark_div"></div>
+
+    <div id="container">
+
+        <div class="left">
+            <div class="content">
+                <h1><a href="login.php">Dr.Care Union</a></h1>
+                <h2>Sign in</h2>
+                <form action="#" method="POST" name="login" autocomplete="off">
+                    <p>
+                        <input type="text" id="uID" name="uID" placeholder="아이디" required>
+                        <label for="uID"><i class="fas fa-user"></i></label>
+                    </p>
+                    <p>
+                        <input type="password" id="uPW" name="uPW" placeholder="비밀번호" required>
+                        <label for="uPW"><i class="fas fa-lock"></i></label>
+                    </p>
+                    <p class="btnSet">
+                        <button type="submit" id="loginBtn" name="loginBtn">LOGIN</button>
+                        <!-- 바로 index 페이지로 넘어가게 해놨음. -->
+                    </p>
+                    <div class="loginText">
+                        <div id="joinBtn"><span>회 원 가 입</span>
+                            <div onclick="location.href='termsM.html'" title="회원가입 (회원용)">회원</div>
+                            <div onclick="location.href='joinL1.html'" title="회원가입 (관리자용)">관리자</div>
+                        </div>
+                        <button onclick="location.href='find.html'">아이디/비밀번호 찾기</button>
+                    </div>
+                    <div class="addCenter">
+                        <button type="button" id="addCenterBtn" name="addCenterBtn" onclick="location.href='addcenter.html'">센 터 등 록</button>
+                    </div>
+
+                    <div class="hid">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="bg_circle1">
+                <div class="bg_circle2"></div>
+                <div class="bg_circle3">
+                    <div class="computer"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="copyright">
+        <div>
+            <img src="img/logo_1.png" class="logo" alt="리안소프트">
+            <img src="img/logo2_1.png" class="logo" alt="닥터케어">
+        </div>
+        <address>Copyright &copy; Liansoft. Allright Reserved. 2020</address>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+@charset "utf-8";
+
+/* Menu UnderBar */
+header > nav > ul > li:nth-of-type(6) > a:after{
+    display: block;
+}
+
+
+
+.Sorting{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    float: left;
+    height: 100%;
+}
+.Sorting input,
+.Sorting select{
+    height: 32px;
+    border: 1px solid rgba(128,128,128,.4);
+    padding: 0 6px;
+    margin: 0 4px;
+    outline: 0;
+    transition: .1s;
+}
+.Sorting input:focus,
+.Sorting select:focus,
+.Sorting button:focus{
+    border: 2px solid var(--mainW);
+}
+.Sorting select{
+    width: 180px;
+}
+.Sorting select#itemSorting{
+    width: 200px;
+}
+.Sorting select#classSorting{
+    width: 200px;
+}
+.Sorting label{
+    font-size: 14px;
+    margin-right: 10px;
+}
+.Sorting > p{
+    padding-right: 21px;
+    position: relative;
+    margin-right: 20px;
+}
+.Sorting > p::after{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background-color: rgba(128,128,128,.4);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#dateSortingEz{
+    margin-right: 10px;
+    width: 100px;
+}
+#sortingBtn, #sortingResetBtn{
+    height: 30px;
+    width: 70px;
+    background-color: var(--mainW);
+    color: #fff;
+    border: none;
+    outline: 0;
+    margin-left: 10px;
+}
+#sortingResetBtn{
+    background-color: #888;
+}
+
+article.container{
+    height: calc(100% - 76px);
+    overflow: auto;
+    padding: 10px 10px 16px;
+}
+.chartCard{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.chartCard > article{
+    width: 20%;
+    max-width: 310px;
+    height: 100%;
+    padding: 5px;
+    margin-right: 18px;
+    position: relative;
+}
+.chartCard > p{
+    width: 50px;
+    text-align: center;
+    color: var(--mainW);
+    overflow: hidden;
+    transition: width 1.2s;
+    display: none;
+}
+.chartCard > article.calcEl0{
+    margin-right: 25px;
+    padding-right: 30px;
+}
+.chartCard > article.calcEl0::after{
+    content: '';
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(128,128,128,.4);
+}
+.chartCard > article > div{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    border-radius: 2px;
+}
+.chartCard > article > div > h3{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--main);
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+}
+.chartCard > article > div > h3 > i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    color: var(--main);
+}
+.chartCard > article > div > .con{
+    height: calc(100% - 20px);
+    position: relative;
+}
+.chartCard > article > div > .con > p{
+    padding-top: 14px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-left: 2px;
+    color: var(--darkGray);
+}
+.progressBarBorder{
+    height: 8px;
+    border: 1px solid green;
+    margin-top: 24px;
+    position: relative;
+}
+.progressBar{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    background-color: var(--mainW);
+    transition: width 2.1s;
+}
+
+.chartListHeader{
+    padding: 10px 10px 0;
+    margin-top: 10px;
+}
+.chartListHeader > .view{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.chartListHeader > .view > div{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.chartListHeader > .view > div > h4{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-right: 10px;
+}
+.chartListHeader > .view > div > span{
+    display: inline-block;
+    height: 26px;
+    padding: 0 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border: 1px solid #9a9ba7;
+    background-color: #9fa0aa;
+    color: #fff;
+    margin-right: 10px;
+    line-height: 24px;
+    cursor: default;
+}
+
+.chartListHeader > table{
+    width: 100%;
+    border: 1px solid rgba(200,200,200,.4);
+    border-collapse: collapse;
+    position: relative;
+    top: 0;
+    left: 0;
+    table-layout: fixed;
+    z-index: 2;
+}
+.chartListHeader > table th{
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    height: 36px;
+    background-color: var(--mainW);
+    color: #fff;
+    letter-spacing: 2px;
+}
+.chartListHeader > table th:nth-of-type(1){width: 6.0240%;}
+.chartListHeader > table th:nth-of-type(2){width: 4.2168%;}
+.chartListHeader > table th:nth-of-type(3){width: 7.8313%;}
+.chartListHeader > table th:nth-of-type(4){width: 15.0722%;}
+.chartListHeader > table th:nth-of-type(5){width: 4.2168%;}
+.chartListHeader > table th:nth-of-type(6){width: 7.2289%;}
+.chartListHeader > table th:nth-of-type(7){width: 7.2289%;}
+.chartListHeader > table th:nth-of-type(8){width: 7.2289%;}
+.chartListHeader > table th:nth-of-type(9){width: 4.2168%;}
+.chartListHeader > table th:nth-of-type(10){width: 4.2168%;}
+.chartListHeader > table th:nth-of-type(11){width: 7.2289%;}
+.chartListHeader > table th:nth-of-type(12){width: 7.2289%;}
+.chartListHeader > table th:nth-of-type(13){width: 5%;}
+.chartListHeader > table th:nth-of-type(14){width: 6.2168%;}
+.chartListHeader > table th:nth-of-type(15){width: 6%;}
+.chartListHeader > table th:nth-of-type(16){width: 4.2168%;}
+#List{
+    padding: 0 10px;
+}
+#List > table{
+    width: 100%;
+    border: 1px solid rgba(128,128,128,.4);
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+#List > table tr{
+    background-color: #fff;
+    cursor: pointer;
+}
+#List > table tr:hover{
+    background-color: #eee;
+}
+#List > table td{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 30px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0 5px;
+    white-space: nowrap;
+    line-height: 24px;
+}
+#List > table td:nth-of-type(1){width: 6.0240%;}
+#List > table td:nth-of-type(2){width: 4.2168%;}
+#List > table td:nth-of-type(3){width: 7.8313%;}
+#List > table td:nth-of-type(4){width: 15.0722%;}
+#List > table td:nth-of-type(5){width: 4.2168%;}
+#List > table td:nth-of-type(6){width: 7.2289%;}
+#List > table td:nth-of-type(7){width: 7.2289%;}
+#List > table td:nth-of-type(8){width: 7.2289%;}
+#List > table td:nth-of-type(9){width: 4.2168%;}
+#List > table td:nth-of-type(10){width: 4.2168%;}
+#List > table td:nth-of-type(11){width: 7.2289%;color: var(--mainW);font-weight: 500;}
+#List > table td:nth-of-type(12){width: 7.2289%;color: var(--fontR);font-weight: 500;}
+#List > table td:nth-of-type(13){width: 5%;}
+#List > table td:nth-of-type(14){width: 6.2168%;}
+#List > table td:nth-of-type(15){width: 6%;}
+#List > table td:nth-of-type(16){width: 4.2168%;text-align: center;}
+
+#List > table td > button{
+    font-size: 11px;
+    padding: 2px 9px;
+    outline: 0;
+    margin: 3px 0;
+    border: 1px solid rgba(128,128,128,.4);
+    position: relative;
+}
+
+
+
+/* 메모 팝업창 */
+#popMemo{
+    position: fixed;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 647px;
+    max-height: 647px;
+    background-color: var(--fontW);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    display: none;
+}
+#popMemo > h2{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+#popMemo > h2 > button.closeBtn{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+#popMemo > h2 > button.closeBtn > div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#popMemo > h2 > button.closeBtn > div > span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#popMemo > h2 > button.closeBtn > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+#popMemo > h2 > button.closeBtn > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#popMemo > div.con{
+    width: 100%;
+    height: calc(100% - 46px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px;
+}
+
+#popMemo > div.con > div{
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+#popMemo > div.con > div > h3{
+    font-weight: 500;
+    width: 150px;
+    font-size: inherit;
+}
+#popMemo > div.con > div > span{
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: inherit;
+}
+
+#popMemo > div.con > div.memoDate,
+#popMemo > div.con > div.memoMemberName,
+#popMemo > div.con > div.memoPhone,
+#popMemo > div.con > div.memoTeacher,
+#popMemo > div.con > div.memoPaymentType,
+#popMemo > div.con > div.memoPaymentMeans{
+    float: left;
+    width: 50%;
+}
+#popMemo > div.con > div.memoDate > h3,
+#popMemo > div.con > div.memoMemberName > h3,
+#popMemo > div.con > div.memoPhone > h3,
+#popMemo > div.con > div.memoTeacher > h3{
+    width: 90px;
+}
+/* #popMemo > div.con > div.memoPhone, */
+#popMemo > div.con > div.memoPay{
+    clear: both;
+}
+
+#popMemo > div.con h2{
+    padding-top: 10px;
+    font-size: 17px;
+    padding-bottom: 6px;
+    font-weight: 500;
+    clear: both;
+}
+
+/* border */
+#popMemo > div.con hr{
+    margin-bottom: 4px;
+}
+
+/* 메모 */
+#popMemo > div.con > div.memoMemo > p{
+    height: 180px;
+    overflow: auto;
+    padding: 0 3px;
+    line-height: 22px;
+}
+
+#popMemo > div.con > div.button{
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    padding: 0;
+}
+#popMemo > div.con > div.button > button{
+    width: 74px;
+    height: 28px;
+    font-weight: 400;
+    font-size: 13.555px;
+    border: 1px solid rgb(131, 131, 131);
+    background-color: rgb(148, 148, 148);
+    color: #fff;
+}
+
+
+.dark_div{
+    background-color: rgba(0,0,0,.1);
+    z-index: 5;
+}

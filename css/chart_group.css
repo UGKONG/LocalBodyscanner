@@ -1,0 +1,529 @@
+@charset "utf-8";
+
+/* Menu UnderBar */
+header > nav > ul > li:nth-of-type(5) > a:after{
+    display: block;
+}
+.dark_div{
+    background-color: rgba(0,0,0,.2);
+    z-index: 5;
+}
+.Sorting{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    float: left;
+    height: 100%;
+}
+.Sorting input,
+.Sorting select{
+    height: 32px;
+    border: 1px solid rgba(128,128,128,.4);
+    padding: 0 6px;
+    margin: 0 4px;
+    outline: 0;
+    transition: .1s;
+}
+.Sorting input:focus,
+.Sorting select:focus,
+.Sorting button:focus{
+    border: 2px solid var(--mainW);
+}
+.Sorting select{
+    width: 180px;
+}
+.Sorting select#itemSorting{
+    width: 200px;
+}
+.Sorting select#classSorting{
+    width: 200px;
+}
+.Sorting label{
+    font-size: 14px;
+    margin-right: 10px;
+}
+.Sorting > p{
+    padding-right: 21px;
+    position: relative;
+    margin-right: 20px;
+}
+.Sorting > p::after{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background-color: rgba(128,128,128,.4);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#dateSortingEz{
+    margin-right: 10px;
+    width: 100px;
+}
+#sortingBtn{
+    height: 30px;
+    width: 70px;
+    background-color: var(--mainW);
+    color: #fff;
+    border: none;
+    outline: 0;
+    margin-left: 10px;
+}
+
+.solo_group_cho{
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+.solo_group_cho > button{
+    width: 130px;
+    height: 40px;
+    outline: 0;
+    letter-spacing: 1px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    font-size: 15px;
+    position: relative;
+    color: #4e555f;
+    overflow: hidden;
+    border: 1px solid #36925f4b;
+    margin: 0 4px;
+}
+.solo_group_cho > button:hover{
+    color: #000;
+    border: 1px solid #36925f;
+}
+.solo_group_cho > button.active{
+    border: 2px solid var(--mainW);
+    color: #000;
+}
+.solo_group_cho > button.active::after{
+    content: '★';
+    font-size: 4px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 12px;
+    line-height: 0px;
+    left: -14px;
+    top: 0px;
+    transform: rotate(-45deg);
+    background-color: var(--mainW);
+}
+
+
+/* 개인레슨 / 그룹레슨 공통 */
+article.container{
+    height: calc(100% - 76px);
+    overflow: auto;
+    padding: 10px;
+}
+
+/* 개인레슨 */
+.chartCard{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.chartCard > article{
+    width: 20%;
+    max-width: 310px;
+    height: 100%;
+    padding: 5px;
+}
+.chartCard > .equals{
+    width: 70px;
+    text-align: center;
+    color: var(--mainW);
+    overflow: hidden;
+    transition: width 1.2s;
+    width: 0;
+}
+.chartCard > article.calcEl0 p.count{
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    bottom: 26px;
+}
+.chartCard > article.calcEl2{
+    display: none;
+    width: 15%;
+    max-width: 230px;
+}
+.chartCard > article.calcEl2 div.con > div{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 12px;
+}
+.chartCard > article.calcEl2 div.con > div > input{
+    margin-left: 2px;
+    margin-right: 6px;
+}
+.chartCard > article > div{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    border-radius: 2px;
+}
+.chartCard > article > div > h3{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--main);
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+}
+.chartCard > article > div > h3 > i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    color: var(--main);
+}
+.chartCard > article > div > .con{
+    height: calc(100% - 20px);
+    position: relative;
+}
+.chartCard > article > div > .con > p{
+    padding-top: 14px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-left: 2px;
+    color: var(--darkGray);
+}
+.chartCard > article > div > .con > p > input{
+    width: 100%;
+    height: 32px;
+    border: 1px solid var(--mainW);
+    margin-top: 4px;
+    padding: 0 5px;
+    outline: 0;
+    transition: .1s;
+}
+.chartCard > article > div > .con > p > input:focus{
+    border-width: 2px;
+}
+.chartCard > article > div > .con > button{
+    float: right;
+    margin-top: 12px;
+    width: 45px;
+    height: 27px;
+    line-height: 25px;
+    font-size: 13px;
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+    outline: 0;
+}
+.chartCard > article > div > .con > button:focus{
+    border: 2px solid var(--main);
+}
+.chartCard > article > div > .con > div.count{
+    position: absolute;
+    color: #555;
+    left: 0;
+    bottom: 24px;
+    font-size: 12px;
+}
+.chartCard > article > div > .con > div.count > span{
+    letter-spacing: 1px;
+}
+.progressBarBorder{
+    height: 8px;
+    border: 1px solid green;
+    margin-top: 24px;
+    position: relative;
+}
+.progressBar{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    background-color: var(--mainW);
+    transition: width 2.1s;
+}
+
+.chartListHeader{
+    padding: 10px 10px 0;
+    margin-top: 10px;
+}
+.chartListHeader > .view{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.chartListHeader > .view input,
+.chartListHeader > .view select{
+    height: 30px;
+    border: 1px solid rgba(128,128,128,.4);
+    outline: 0;
+    transition: .1s;
+    padding: 0 6px;
+}
+.chartListHeader > .view input:focus,
+.chartListHeader > .view select:focus{
+    border: 2px solid var(--mainW);
+}
+#viewCount{width: 70px;}
+#searchList{width: 300px;margin-left: 4px;}
+.chartListHeader > .view > p{
+    margin: 0 10px;
+    font-size: 14px;
+}
+.chartListHeader > .view > div{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.chartListHeader > .view > div > h4{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-right: 10px;
+}
+.chartListHeader > .view > div > span{
+    display: inline-block;
+    height: 26px;
+    padding: 0 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border: 1px solid #9a9ba7;
+    background-color: #9fa0aa;
+    color: #fff;
+    margin-right: 10px;
+    line-height: 24px;
+    cursor: default;
+}
+.chartListHeader > table{
+    width: 100%;
+    border: 1px solid rgba(200,200,200,.4);
+    border-collapse: collapse;
+    position: relative;
+    top: 0;
+    left: 0;
+    table-layout: fixed;
+    z-index: 2;
+}
+.chartListHeader > table th{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    height: 36px;
+    background-color: var(--mainW);
+    color: #fff;
+}
+.chartListHeader > table th:nth-of-type(1){width: 4%;}
+.chartListHeader > table th:nth-of-type(2){width: 8%;}
+.chartListHeader > table th:nth-of-type(3){width: 8%;}
+.chartListHeader > table th:nth-of-type(4){width: 25%;}
+.chartListHeader > table th:nth-of-type(5){width: 20%;}
+.chartListHeader > table th:nth-of-type(6){width: 14%;}
+.chartListHeader > table th:nth-of-type(7){width: 20%;}
+
+#List > table td:nth-of-type(1){width: 4%;}
+#List > table td:nth-of-type(2){width: 8%;}
+#List > table td:nth-of-type(3){width: 8%;}
+#List > table td:nth-of-type(4){width: 25%;}
+#List > table td:nth-of-type(5){width: 20%;}
+#List > table td:nth-of-type(6){width: 14%;}
+#List > table td:nth-of-type(7){width: 20%;}
+
+#List{
+    padding: 0 10px 10px;
+}
+#List > table{
+    width: 100%;
+    border: 1px solid rgba(128,128,128,.4);
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+#List > table td{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 30px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    white-space: nowrap;
+    padding: 0 5px;
+}
+
+#List > table td > button{
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    padding: 2px 5px;
+    outline: 0;
+    border: 1px solid rgba(128,128,128,.4);
+}
+#List > table td > button:hover{
+    background-color: rgba(128,128,128,.1);
+}
+
+
+
+/* 모달창 */
+div.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 10;
+    display: none;
+}
+div.modal > h3{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+div.modal > h3 > button.closeBtn{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+div.modal > h3 > button.closeBtn > div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+div.modal > h3 > button.closeBtn > div > span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+div.modal > h3 > button.closeBtn > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+div.modal > h3 > button.closeBtn > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+div.modal > .con{
+    padding: 8px;
+    height: calc(100% - 94px);
+    position: relative;
+    overflow: auto;
+}
+
+div.modal > .con > .lengthView{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+div.modal > .con > .lengthView > article{
+    width: 32%;
+    height: 80px;
+    padding: 4px;
+}
+div.modal > .con > .lengthView > article:nth-of-type(1){color: var(--mainB);}
+div.modal > .con > .lengthView > article:nth-of-type(2){color: var(--mainW);}
+div.modal > .con > .lengthView > article:nth-of-type(3){color: var(--fontR);}
+div.modal > .con > .lengthView > article > h4{
+    font-size: 14px;
+    position: relative;
+    color: inherit;
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-align: center;
+    padding-top: 4px;
+}
+div.modal > .con > .lengthView > article > h4 > i{
+    margin-right: 5px;
+    font-size: 17px;
+    color: inherit;
+}
+div.modal > .con > .lengthView > article > h4 + p{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: 14px;
+    text-align: center;
+}
+div.modal > button{
+    width: 70px;
+    position: absolute;
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 13px;
+    height: 28px;
+    bottom: 10px;
+    right: 10px;
+}
+div.modal table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.12);
+}
+div.modal table th{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background-color: var(--mainWW);
+    color: #fff;
+    height: 32px;
+}
+div.modal table th:nth-of-type(1){width: 80px;}
+div.modal table th:nth-of-type(2){width: 130px;}
+div.modal table th:nth-of-type(3){width: 211px;}
+div.modal table th:nth-of-type(4){width: 60px;}
+div.modal table td{
+    height: 30px;
+    font-size: 13px;
+    text-align: center;
+    color: #444;
+}
+div.modal table td > span{
+    color: rgb(201, 108, 2);
+    font-weight: 500;
+    cursor: pointer;
+}
+div.modal table td > span:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+

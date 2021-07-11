@@ -1,0 +1,634 @@
+@charset "utf-8";
+
+/* Menu UnderBar */
+header > nav > ul > li:nth-of-type(7) > a:after{
+    display: block;
+}
+
+
+.content > .top_sMenu{
+    position: relative;
+}
+
+.content > .top_sMenu span.rect{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0,0,0,.3);
+    
+}
+.content > .top_sMenu > .boxinfo{
+    display: flex;
+    width: 500px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.content > .top_sMenu > .boxinfo > p{
+    margin: 0 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.content > .top_sMenu > .boxinfo p > span{
+    margin: 0 2px;
+    letter-spacing: 1px;
+}
+.content > .top_sMenu > .boxinfo p:nth-of-type(1) span.rect{ background-color: var(--mainW) }
+.content > .top_sMenu > .boxinfo p:nth-of-type(2) span.rect{ background-color: #fff }
+.content > .top_sMenu > .boxinfo p:nth-of-type(3) span.rect{ background-color: #bbb }
+.content > .top_sMenu > .boxinfo > div#rockerName{
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.content > .top_sMenu > .headBtn{
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.content > .top_sMenu > .headBtn > #rockerSetBtn{
+    width: 100px;
+    height: 32px;
+    margin-right: 10px;
+    font-size: 13.5px;
+    letter-spacing: 1px;
+    border: 0;
+    background-color: var(--mainW);
+    color: #fff;
+}
+.content > .top_sMenu > .headBtn > select#rockerType{
+    width: 200px;
+    height: 32px;
+    border: 1px solid #bad0de;
+    transition: .1s;
+    padding: 0 4px;
+    outline: 0;
+}
+.content > .top_sMenu > .headBtn > select#rockerType:focus{
+    border: 2px solid #bad0de;
+}
+#rockerList{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+#rockerList > article{
+    width: 10%;
+    height: 160px;
+    position: relative;
+}
+#rockerList > article > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: absolute;
+    border-radius: 4px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgba(0, 99, 0, 0.255);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+#rockerList > article.yesUse > div{
+    border: 1px solid rgba(0, 255, 0, 0.255);
+    background-color: var(--mainW);
+    color: #fff;
+}
+#rockerList > article.noUse > div:hover{
+    transition: .1s background-color;
+    background-color: rgb(250, 250, 250);
+}
+#rockerList > article > div > p.rockerNum{
+    width: 100%;
+    height: 28px;
+    padding: 4px 6px;
+    font-size: 14px;
+    color: #666;
+}
+#rockerList > article.yesUse > div > p.rockerNum{
+    color: whitesmoke;
+}
+#rockerList > article.noUse > div > p.rockerNum{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    width: unset;
+    height: unset;
+    color: #222;
+}
+#rockerList > article > div > p.useInfo{
+    width: 100%;
+    height: calc(100% - 28px);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+}
+#rockerList > article.yesUse > div > p.useInfo > span{
+    color: rgb(255, 255, 77);
+    animation: fade infinite 2s;
+}
+@keyframes fade{
+    0%  {opacity: 1;}
+    30% {opacity: 0;}
+    80% {opacity: 1;}
+}
+#rockerList > article > div > p.useInfo > span{
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+#rockerList > article.impossible > div{
+    border: 1px solid #aaa;
+    background-color: #bbb;
+}
+#rockerList > article.impossible > div:hover{
+    border: #bbb;
+    background-color: #bbb;
+    color: unset;
+    cursor: default;
+}
+#rockerList > article.impossible > div > p.rockerNum{
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+#rockerList > article.impossible > div > p.rockerNum::after{
+    content: '이용불가';
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(223, 43, 43);
+    font-weight: 500;
+}
+
+
+
+
+
+/* 팝업 */
+.pop_add,
+.pop_info{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    background-color: #fff;
+    z-index: 999;
+    border: 2px solid var(--mainW);
+    border-radius: 6px;
+    padding: 8px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+.pop_add > h2,
+.pop_info > h2{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px 6px 12px;
+    border-bottom: 1px solid var(--mainW);
+    margin-bottom: 10px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* 내용 */
+.pop_add > section.pop_content,
+.pop_info > section.pop_content{
+    padding: 7px;
+    overflow: auto;
+}
+/* row */
+.pop_add > section.pop_content > div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 0;
+}
+.pop_add > section.pop_content > div.pop_rockerAttr{
+    border-bottom: 1px solid rgba(128,128,128,.2);
+    margin-bottom: 10px;
+    padding: 0 0 16px;
+}
+.pop_add > section.pop_content > div > h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+    display: inline-block;
+    width: 140px;
+    padding-left: 4px;
+}
+.pop_add > section.pop_content > div > div{
+    display: inline-block;
+}
+.pop_add > section.pop_content > div > .choice > button{
+    width: 120px;
+    height: 32px;
+    margin: 0 3px;
+    letter-spacing: 1px;
+}
+.pop_add > section.pop_content > div > .choice > button.active{
+    background-color: var(--mainW);
+    border: 1px solid var(--mainW);
+    color: #fff;
+}
+
+.pop_add > section.pop_content > div > div > button#pop_searchMember{
+    width: 120px;
+    margin: 0 3px;
+    height: 32px;
+    letter-spacing: 1px;
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+
+}
+.pop_add > section.pop_content > div > div > input{
+    width: 140px;
+    height: 32px;
+    border: 1px solid var(--mainW);
+    outline: 0;
+    margin: 0 3px;
+    padding-left: 6px;
+    transition: .1s;
+}
+.pop_add > section.pop_content > div > div > input:focus{
+    border-width: 2px;
+}
+.pop_add > section.pop_content > div.rowDate{
+    align-items: flex-start;
+}
+.pop_add > section.pop_content > div.rowDate > h3{
+    padding: 6px 4px;
+}
+.pop_add > section.pop_content > div.rowDate button{
+    margin: 8px 4px 0;
+    width: 50px;
+    height: 26px;
+    border: 1px solid var(--mainW);
+    font-size: 12px;
+    color: #555;
+}
+.pop_add > section.pop_content > div.rowDate button:hover{
+    color: #000;
+}
+.pop_add > section.pop_content > div.pop_memberInfo{
+    align-items: flex-start;
+}
+.pop_add > section.pop_content > div.pop_memberInfo > h3{
+    padding-top: 6px;
+}
+.pop_add > section.pop_content > div.pop_memberInfo p{
+    padding: 4px 0;
+}
+.pop_add > section.pop_content > div.pop_memberInfo p label{
+    font-size: 14px;
+    width: 50px;
+    display: inline-block;
+}
+.pop_add > section.pop_content > div.pop_memberInfo p input{
+    width: 140px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    cursor: default;
+    color: #555;
+    padding: 0;
+}
+.pop_add > section.pop_content > div.pop_memberInfo p input.input{
+    cursor: text;
+    border: 1px solid #319ce46e;
+    padding: 0 6px;
+    transition: .1s;
+}
+.pop_add > section.pop_content > div.pop_memberInfo p input.input:focus{
+    border: 2px solid #319ce46e;
+}
+.pop_add > section.pop_content > div.pop_NotMemberInfo p input{
+    width: 140px;
+    height: 32px;
+    border: 1px solid #319ce46e;
+    padding-left: 6px;
+    cursor: text;
+}
+.pop_add > section.pop_content > div.btn{
+    margin-top: 10px;
+    justify-content: center;
+}
+.pop_add > section.pop_content > div.btn > button{
+    width: 80px;
+    height: 32px;
+    margin: 4px;
+    border: 1px solid #999;
+    color: #444;
+}
+.pop_add > section.pop_content > div.btn > button:first-of-type{
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    color: #fff;
+}
+/* 비회원 이용 */
+.notMember_use{
+    display: inline-block;
+    width: 120px;
+    margin: 0 3px;
+    height: 32px;
+    letter-spacing: 1px;
+    border: 1px solid var(--mainW);
+    background-color: #fff;
+    color: #444;
+    font-size: 13.3333px;
+    cursor: pointer;
+    vertical-align: top;
+    line-height: 32px;
+    text-align: center;
+}
+
+
+
+.pop_info > section.pop_content{
+    padding-top: 20px;
+}
+.pop_info .left{
+    width: 106px;
+    height: 106px;
+    overflow: hidden;
+    margin-right: 60px;
+    float: left;
+    margin-left: 44px;
+}
+.pop_info .left > img{
+    width: 100%;
+    height: 100%;
+}
+.pop_info .right{
+    width: 200px;
+    float: left;
+}
+.pop_info .right .name{
+    font-size: 17px;
+    line-height: 14px;
+}
+.pop_info .right .num{
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 4px;
+}
+.pop_info .right .date{
+    line-height: 34px;
+}
+.pop_info .right label{
+    font-size: 14px;
+    display: inline-block;
+    width: 50px;
+
+}
+.pop_info .right input{
+    width: 144px;
+    height: 32px;
+    border: 0px solid #2f94d8;
+    position: relative;
+    outline: 0;
+    padding: 0 6px;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+.pop_info .right input::after{
+    content: '';
+    position: absolute;
+    height: 32px;
+    width: 28px;
+    background-color: #fff;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.pop_info .right input.edit{
+    border: 1px solid #2f94d8;
+    transition: .1s;
+}
+.pop_info .right input.edit:focus{
+    border-width: 2px;
+}
+.pop_info .right input.edit::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: inherit;
+    left: 0;
+    top: 0;
+}
+.pop_info .btn{
+    clear: both;
+    text-align: center;
+}
+.pop_info .btn > button{
+    width: 90px;
+    height: 30px;
+    margin: 26px 3px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.pop_info .btn > button.info_dateEdit,
+.pop_info .btn > button.info_dateEdit_ok{
+    border: #2f94d8;
+    background-color: #2f94d8;
+    color: #fff
+}
+.pop_info .btn > button.info_unuse{
+    border: #f0562f;
+    background-color: #f0562f;
+    color: #fff
+}
+.pop_info .btn > button.info_close{
+    border: #999;
+    background-color: #999;
+    color: #fff;
+}
+
+
+
+/* 라커관리 */
+#pop_set{
+    position: fixed;
+    min-width: 400px;
+    max-width: 1100px;
+    min-height: 200px;
+    max-height: 800px;
+    background-color: var(--fontW);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+#pop_set > h2{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+#pop_set > h2 > button{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+#pop_set > h2 > button > div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#pop_set > h2 > button > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#pop_set > h2 > button > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+#pop_set > div.content{
+    margin-top: 1px;
+    min-width: 600px;
+    max-height: calc(800px - 50px);
+    padding: 20px;
+    overflow: auto;
+}
+#pop_set > div.content > p{
+    display: flex;
+    align-items: center;
+    padding: 10px 0 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(128,128,128,.2);
+}
+#pop_set > div.content > p > select{
+    min-width: 100px;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+#pop_set > div.content > p > input{
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+    margin-left: 10px;
+}
+#pop_set > div.content > p > input.rockerSet_name{
+    width: 100%;
+}
+#pop_set > div.content > p > input.rockerSet_count{
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+#pop_set > div.content > p > button{
+    height: 34px;
+    min-width: 50px;
+    color: #fff;
+    border: 1px solid var(--mainW);
+    background-color: var(--mainW);
+    margin-left: 10px;
+}
+
+#pop_set > div.content > ul{
+    padding: 10px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+#pop_set > div.content > ul > li{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+#pop_set > div.content > ul > li > select{
+    min-width: 100px;
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+}
+#pop_set > div.content > ul > li > input{
+    height: 34px;
+    border: 1px solid var(--mainWW);
+    padding: 0 10px;
+    margin-left: 10px;
+}
+#pop_set > div.content > ul > li > input.rockerSet_name{
+    width: 100%;
+}
+#pop_set > div.content > ul > li > input.rockerSet_count{
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+#pop_set > div.content > ul > li > button{
+    height: 34px;
+    min-width: 50px;
+    color: #fff;
+    border: 1px solid rgb(201, 38, 38);
+    background-color: rgb(214, 64, 64);
+    margin-left: 10px;
+}
+
+
+#pop_set > div.content > article.btn{
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pop_set > div.content > article.btn > button{
+    width: 100px;
+    margin: 0 4px;
+    height: 36px;
+    border: 0;
+}
+#pop_set > div.content > article.btn > button.submit{
+    background-color: var(--mainW);
+    color: #fff;
+}
+#pop_set > div.content > article.btn > button.close{
+    background-color: var(--gray);
+    color: #fff;
+}
+
+
+
+
+
+
+/* 뒷 div */
+div.dark_div{
+    z-index: 50;
+    background-color: rgba(0,0,0,.1);
+}

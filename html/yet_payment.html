@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/Array.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/yet_payment.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/yet_payment.css">
+    <title>결제창</title>
+</head>
+<body> 
+    <script>
+        $itemData = "0004";  //<?=$post(["seq"])?>
+    </script>
+
+    <article class="Pay other">
+        <div>
+            <h4>미수금 결제</h4>
+            <form action="#" method="POST" autocomplete="off" name="paymentFrm" id="paymentFrm">
+                <section class="col1">
+                    <article class="con1">
+                        <h5>회원정보</h5>
+                        <div class="row1">
+                            <p id="uName"><input type="text" name="paymentMember" id="paymentMember" value="전상욱" readonly required></p>
+                            <p class="uNum" style="width: 142px;">연락처: <span id="uNum">010-1234-1234</span></p>
+                        </div>
+                    </article>
+                    <article class="con2">
+                        <h5>결제 상품 정보</h5>
+                        <div class="row1">
+                            <p id="PaymentItemName"></p>
+                        </div>
+                        <div class="row2">
+                            <p>상품가격</p>
+                            <p id="Payment" class="pointColor_blue data-pay" data-pay="0"></p>
+                        </div>
+                    </article>
+                    <article class="con3">
+                        <h5>결제 옵션</h5>
+                        <div class="row1">
+                            <label for="Payment-select1">결제 담당자 선택</label>
+                            <select name="Payment-select1" id="Payment-select1" required>
+                                <option value="">담당직원선택</option>
+                                <!-- js -->
+                            </select>
+                        </div>
+                        <div class="row2">
+                            <label for="Payment-select2">이용 시작일 선택</label>
+                            <input type="date" name="Payment-select2" id="Payment-select2" style="border: none;" readonly required value="2020-12-01">
+                        </div>
+                        <div class="row2">
+                            <label for="Payment-select2_1">이용 만료일</label>
+                            <input type="date" name="Payment-select2_1" id="Payment-select2_1" style="border: none;" readonly required value="2021-06-01">
+                        </div>
+                        <div class="row3">
+                            <label for="Payment-select3">이용가능 횟수</label>
+                            <input type="text" name="Payment-select3" id="Payment-select3" style="border: none;" required readonly>
+                        </div>
+                        <div class="row4">
+                            <label for="Payment-money_">미수결제금액</label>
+                            <span name="Payment-money_" id="Payment-money_"></span> 원 <small>(이전 결제금액 : <span id="Payment-money"></span>원)</small>
+                        </div>
+                        <div class="row5">
+                            <label for="Payment-sale-ez">할인선택</label>
+                            <select name="Payment-sale-ez" id="Payment-sale-ez">
+                                <option value="">할인율</option>
+                                <!-- js -->
+                            </select>
+                            
+                            <label for="Payment-sale-data-won" style="display: none;">할인액입력</label>
+                            <input type="text" id="Payment-sale-data-won" placeholder="할인액 직접입력" required>
+                        </div>
+                    </article>
+                </section>
+                <section class="col2">
+                    <article class="con1">
+                        <h5>결제 진행</h5>
+                        <div>
+                            <table class="itemPayTable">
+                                <tr>
+                                    <th>상품가격<br><small>(이전 결제 제외)</small>
+                                    </th>
+                                    <td class="PayStart"><span id="startPay">0</span> 원</td>
+                                </tr>
+                                <tr class="null"></tr>
+                                <tr class="tableStart">
+                                    <th>카 드</th>
+                                    <td class="indent">
+                                        <input type="text" name="cardPayment" id="cardPayment" maxlength="8" placeholder="숫자만 입력">
+                                        <label for="cardPayment"> 원</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>현 금</th>
+                                    <td class="indent">
+                                        <input type="text" name="cashPayment" id="cashPayment" maxlength="8" placeholder="숫자만 입력">
+                                        <label for="cashPayment"> 원</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이 체</th>
+                                    <td class="indent">
+                                        <input type="text" name="accountPayment" id="accountPayment" maxlength="8" placeholder="숫자만 입력">
+                                        <label for="accountPayment"> 원</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>할 인</th>
+                                    <td><span id="salePayment">0</span> 원</td>
+                                </tr>
+                                <tr>
+                                    <th>미 수 금</th>
+                                    <td class="pointColor_red"><span id="yetPayment">0</span> 원</td>
+                                </tr>
+                                <tr class="null"></tr>
+                                <tr class="tableEnd">
+                                    <th>총 결제금액</th>
+                                    <td class="pointColor_blue"><span id="totalPayment">0</span> 원</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="con2">
+                        <h5>결제 메모</h5>
+                        <div class="memoTR">
+                            <label for="Payment-memo" class="hid">결제 메모</label>
+                            <textarea name="Payment-memo" id="Payment-memo"></textarea>
+                        </div>
+                    </article>
+                </section>
+                <section class="col3">
+                    <article class="con1">
+                        <h5>상품 결제 정보
+                            <button type="button">결제내역보기</button>
+                            <select name="Receipt_PaymentNumber" id="Receipt_PaymentNumber">
+                                <option value="1">1차 결제정보</option>
+                                <option value="2">2차 결제정보</option>
+                            </select>
+                        </h5>
+                        <div title="영수증" class="Receipt notView">
+                            <div>
+                                <h6>회원명</h6>
+                                <span id="Receipt_Name">전상욱</span>
+                            </div>
+                            <div>
+                                <h6>결제 상품명</h6>
+                                <span id="Receipt_TicketName"></span>
+                            </div>
+                            <div>
+                                <h6>상품가격</h6>
+                                <span id="Receipt_TicketPrice"></span>원
+                            </div>
+                            <div>
+                                <h6>할인</h6>
+                                <span id="Receipt_Sale1">0</span>원
+                            </div>
+                            <div>
+                                <h6>이전 결제금액</h6>
+                                <span id="Receipt_lastPayment">0</span>원
+                            </div>
+                            <div>
+                                <h6>할인가</h6>
+                                <span id="Receipt_Sale2">0</span>원 (이전 결제 제외 금액)
+                            </div>
+                            <div>
+                                <h6>결제수단</h6>
+                                <ul>
+                                    <li>카드 : <span id="Receipt_CardPay">0</span>원</li>
+                                    <li>현금 : <span id="Receipt_CashPay">0</span>원</li>
+                                    <li>이체 : <span id="Receipt_AccountPay">0</span>원</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>결제금액</h6>
+                                <span id="Receipt_Payment">0</span>원
+                            </div>
+                            <div>
+                                <h6>미수금</h6>
+                                <span id="Receipt_YetPay">0</span>원
+                            </div>
+                            <hr>
+                            <div>
+                                <h6>결제 담당자</h6>
+                                <span id="Receipt_Teacher">미선택</span>
+                            </div>
+                            <div>
+                                <h6>이용 시작일</h6>
+                                <span id="Receipt_StartDate">2020-12-01</span>
+                            </div>
+                            <div>
+                                <h6>이용 만료일</h6>
+                                <span id="Receipt_EndDate">2021-06-01</span>
+                            </div>
+                            <div>
+                                <h6>결제일</h6>
+                                <span id="Receipt_PaymentDate"></span>
+                            </div>
+                            <div>
+                                <h6>결제 메모</h6>
+                                <span id="Receipt_Memo" style="width: 100%;height: 60px;margin-top: 6px;font-size: 13px;text-indent: 4px;overflow: auto;"></span>
+                            </div>
+                        </div>
+                        <div title="결제내역" class="PaymentList View" hidden>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>차수</th>
+                                        <th>결제일시</th>
+                                        <th>결제수단</th>
+                                        <th>결제금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: center;">
+                                    <tr>
+                                        <td>1차 결제</td>
+                                        <td>2020-10-04</td>
+                                        <td>카드</td>
+                                        <td>1,200,000원</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1차 결제</td>
+                                        <td>2020-10-04</td>
+                                        <td>현금</td>
+                                        <td>500,000원</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2차 결제</td>
+                                        <td>2020-12-02</td>
+                                        <td>이체</td>
+                                        <td>1,400,000원</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2차 결제</td>
+                                        <td>2020-12-02</td>
+                                        <td>카드</td>
+                                        <td>100,000원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="conBtn">
+                        <button class="payment-submit-btn" type="submit">결제하기</button>
+                        <button class="payment-cancel-btn" type="reset">취 소</button>
+                    </article>
+                </section>
+            </form>
+        </div>
+    </article>
+
+</body>
+</html>

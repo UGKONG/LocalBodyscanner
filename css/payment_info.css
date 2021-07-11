@@ -1,0 +1,953 @@
+@charset "utf-8";
+html{
+    width: unset;
+    height: unset;
+}
+body{
+    width: unset;
+    height: unset;
+    min-width: unset;
+    min-height: unset;
+    max-width: unset;
+    max-height: unset;
+}
+.other > div{
+    padding: 10px;
+}
+.other > div > h4{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px 6px 12px;
+    border-bottom: 2px solid var(--mainW);
+    margin-bottom: 10px;
+}
+article.Pay.other{
+    width: 1200px;
+    height: 711px;
+    height: auto;
+    background-color: #fff;
+    z-index: 99;
+}
+article.Pay.other form{
+    width: 100%;
+    overflow: auto;
+}
+#Frm_todayOverlap{width: 100px;}
+/* 공통작업 */
+article.Pay.other form .pointColor_blue{color: #0869aa;}
+article.Pay.other form .pointColor_red{color: rgb(255, 75, 51);}
+article.Pay.other form .pointColor_green{color: rgb(30, 170, 95);}
+
+article.Pay.other form section{
+    float: left;
+    padding: 0 10px;
+    width: 33.333333%;
+    height: 635px;
+    position: relative;
+}
+article.Pay.other form section > article{
+    margin-bottom: 30px;
+}
+article.Pay.other form section > article > h5{
+    font-size: 17px;
+    font-weight: 400;
+    padding: 4px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--mainW);
+    color: var(--main);
+}
+article.Pay.other form section > article > div{
+    margin: 8px 4px;
+}
+article.Pay.other form section > article > div.payDetail{
+    position: relative;
+}
+article.Pay.other form section > article > div.payDetail > p.refundOK{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: #f00;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    display: none;
+}
+
+/* 개별작업 */
+
+/* 회원 정보 */
+article.Pay.other form section.col1 > article.con1 > div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+article.Pay.other form section.col1 > article.con1 > div > p:nth-of-type(1){width: 100px;}
+article.Pay.other form section.col1 > article.con1 > div > p:nth-of-type(2){width: 134.11px;}
+article.Pay.other form section.col1 > article.con1 > div > p:nth-of-type(3){width: 140px; text-align: right;}
+article.Pay.other form section.col1 > article.con1 > div > p#recentDatePay{
+    display: flex;
+    justify-content: space-between;
+}
+article.Pay.other form section.col1 > article.con1 > div > p #recentDate{font-size: 12px;}
+
+/* 결제 상품 정보 */
+article.Pay.other form section.col2 > article.con2 > .row1{
+    font-size: 20px;
+    font-weight: 500;
+}
+article.Pay.other form section.col2 > article.con2 > .row2{
+    display: flex;
+    justify-content: space-between;
+}
+article.Pay.other form section.col2 > article.con2 > .row2 > p{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+}
+article.Pay.other form section.col2 > article.con2 > .row2 > p:last-of-type{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+/* 결제 진행 */
+article.Pay.other form section.col2 > article.con1 table{
+    width: 100%;
+    border: 1px solid #aaafb3;
+    border-collapse: collapse;
+}
+article.Pay.other form section.col2 > article.con1 table tr{
+    height: 40px;
+}
+article.Pay.other form section.col2 > article.con1 table th{
+    width: 35%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #58646b;
+    background-color: #dce9de;
+    border-bottom: 1px solid rgba(128,128,128,.5);
+}
+article.Pay.other form section.col2 > article.con1 table tr:last-of-type th{border-bottom: 0;}
+article.Pay.other form section.col2 > article.con1 table tr.null{
+    height: 20px;
+}
+article.Pay.other form section.col2 > article.con1 table tr.tableStart,
+article.Pay.other form section.col2 > article.con1 table tr.tableEnd{
+    border-top: 1px solid #aaafb3;
+}
+article.Pay.other form section.col2 > article.con1 table tr.tableEnd{
+    height: 60px;
+}
+article.Pay.other form section.col2 > article.con1 table tr.tableEnd > td{
+    font-size: 22px;
+}
+article.Pay.other form section.col2 > article.con1 table td{
+    width: 65%;
+    text-align: right;
+    padding-right: 20px;
+    border-left: 1px solid rgba(128,128,128,.5);
+    border-bottom: 1px solid rgba(128,128,128,.5);
+    color: #4d555a;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+article.Pay.other form section.col2 > article.con1 table td.PayStart{
+    padding: 0 20px 0 0;
+}
+article.Pay.other form section.col2 > article.con1 table td.pointColor_blue{color: #0869aa;}
+article.Pay.other form section.col2 > article.con1 table td.pointColor_red{color: rgb(255, 75, 51);}
+article.Pay.other form section.col2 > article.con1 table td.pointColor_green{color: rgb(30, 170, 95);}
+
+button.active{
+    background-color: #9ea3a53f;
+    color: #888;
+    cursor: default;
+}
+article.Pay.other form section.col2 > article.con1 table tr:first-of-type{
+    height: 50px;
+}
+.itemPayTable td small{
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+}
+.itemPayTable td{
+    position: relative;
+}
+.itemPayTable td > button{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: 1px solid #aaafb3;
+    background-color: #d1dde43f;
+    outline: 0;
+}
+.itemPayTable td > button.active{
+    border-left: 1px solid #aaafb3;
+    background-color: rgba(239, 239, 239, 0.3);
+    color: rgba(16, 16, 16, 0.5);
+}
+.itemPayTable td > button.active::after{
+    content: '수정';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    z-index: 9;
+    right: 0;
+    top: 0;
+    color: #777;
+    box-sizing: border-box;
+    border-left: 1px solid #aaafb3;
+    background-color: rgb(241, 241, 241);
+    cursor: pointer;
+}
+.itemPayTable td > button + input.checked,
+.itemPayTable td > button + input.checked + label{
+    color: #aaa;
+    cursor: default;
+}
+.itemPayTable input{
+    height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 0;
+    text-align: right;
+    width: 100px;
+    padding: 0 10px;
+    font-size: 14px;
+    padding-right: 2px;
+    border-radius: 4px;
+}
+
+/* 결제 옵션 */
+article.Pay.other form section.col1 > article.con3 > div{margin-top: 13px;padding-bottom: 6px;margin-bottom: 13px;}
+article.Pay.other form section.col1 > article.con3 > div.row1 > label,
+article.Pay.other form section.col1 > article.con3 > div.row2 > label,
+article.Pay.other form section.col1 > article.con3 > div.row3 > label,
+article.Pay.other form section.col1 > article.con3 > div.row4 > label,
+article.Pay.other form section.col1 > article.con3 > div.row5 > label{
+    display: inline-block;
+    width: 110px;
+    font-size: 14px;
+}
+
+article.Pay.other form section.col1 > article.con3 > div.row1 > select,
+article.Pay.other form section.col1 > article.con3 > div.row2 > input,
+article.Pay.other form section.col1 > article.con3 > div.row3 > input{
+    width: 140px;
+    height: 32px;
+    border: 1px solid var(--mainW);
+    padding: 0 6px;
+    outline: 0;
+    transition: .1s;
+}
+
+article.Pay.other form section.col1 > article.con3 > div.row1 > p,
+article.Pay.other form section.col1 > article.con3 > div.row2 > p,
+article.Pay.other form section.col1 > article.con3 > div.row3 > p{
+    display: inline-block;
+    font-size: 14px;
+}
+
+article.Pay.other form section.col1 > article.con3 > div.row1 > select:focus,
+article.Pay.other form section.col1 > article.con3 > div.row2 > input:focus,
+article.Pay.other form section.col1 > article.con3 > div.row3 > input:focus,
+article.Pay.other form section.col1 > article.con3 > div.row4 > input:focus{
+    border: 2px solid var(--mainW);
+}
+article.Pay.other form section.col1 > article.con3 > div.row4{
+    position: relative;
+    margin-top: 10px;
+}
+article.Pay.other form section.col1 > article.con3 > div.row3 > input{
+    border: none;
+}
+article.Pay.other form section.col1 > article.con3 > div.row4 > input{
+    transition: .1s;
+    outline: 0;
+    border: 1px solid var(--mainW);
+    height: 32px;
+    padding: 0 6px;
+    width: 140px;
+    left: 72px;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+}
+article.Pay.other form section.col1 > article.con3 > div.row5{
+    display: flex;
+    align-items: center;    
+}
+article.Pay.other form section.col1 > article.con3 > div.row5 select,
+article.Pay.other form section.col1 > article.con3 > div.row5 input{
+    width: 84px;
+    height: 32px;
+    border: 1px solid var(--mainW);
+    padding: 0 6px;
+    outline: 0;
+    transition: .1s;
+    margin-right: 4px;
+    margin-left: 4px;
+    font-size: 13px;
+}
+article.Pay.other form section.col1 > article.con3 > div.row5 input{
+    width: 130px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* 결제 메모 */
+article.Pay.other form section.col1 > article.con2 .memoTR textarea{
+    width: 100%;
+    height: 135px;
+    resize: none;
+    margin-top: 6px;
+    padding: 3px 5px;
+    border: 1px solid var(--mainW);
+    outline: 0;
+    padding: 6px;
+    font-size: 13px;
+}
+article.Pay.other form section.col1 > article.con2 .memoTR textarea:focus{
+    border: 2px solid var(--mainW);
+}
+article.Pay.other form section.col3 > article.con1 > h5 > button{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    width: 90px;
+    border: 1px solid rgba(128,128,128,.5);
+    height: 28px;
+    padding: 0 5px;
+    outline: 0;
+}
+article.Pay.other form section.col3 > article.con1 > h5 > button.active{
+    background-color: var(--mainW);
+    color: #fff;
+    cursor: pointer;
+}
+
+article.Pay.other form section.col3 > article.con1 > div.PaymentList{
+    overflow: auto;
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table th{
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(128,128,128,.5);
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table > tbody > tr > td:first-of-type{
+    font-size: 13px;
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table td{
+    font-size: 14px;
+    line-height: 18px;
+    height: 44px;
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table td > i{
+    cursor: pointer;
+    color: rgb(212, 107, 81);
+    padding: 2px;
+}
+article.Pay.other form section.col3 > article.con1 > div.PaymentList > table td > i:hover{
+    color: red;
+}
+
+article.Pay.other form section.col3 > article.con1 > div{
+    background-color: #dce9de;
+    border: 1px solid #c6dac9;
+    border-radius: 4px;
+    padding: 14px;
+    height: 523px;
+    overflow: hidden;
+}
+article.Pay.other form section.col3 > article.con1 > div > div{
+    font-size: 14px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+article.Pay.other form section.col3 > article.con1 > div h6{
+    font-size: 14px;
+    display: inline-block;
+    width: 120px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+}
+article.Pay.other form section.col3 > article.con1 > div span,
+article.Pay.other form section.col3 > article.con1 > div ul{
+    font-size: 14px;
+    display: inline-block;
+}
+article.Pay.other form section.col3 > article.con1 > div hr{
+    margin: 18px 0 18px;
+}
+
+/* 버튼 */
+article.Pay.other form section.col3 > article.conBtn{
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    margin: 0;
+    padding-right: 14px;
+}
+article.Pay.other form section > article.conBtn > button{
+    width: 80px;
+    height: 30px;
+    border: 1px solid var(--mainW);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0 2px;
+}
+article.Pay.other form section > article.conBtn > button.payment-give-btn{
+    background-color: #d89023;
+    border: 1px solid #c9841d;
+    color: #fff;
+}
+article.Pay.other form section > article.conBtn > button.payment-refund-btn{
+    background-color: #777;
+    color: #fff;
+    border: 1px solid #666;
+}
+article.Pay.other form section > article.conBtn > button.payment-submit-btn{
+    background-color: var(--mainW);
+    color: #fff;
+}
+#paymentMember{
+    width: 130px;
+    height: 26px;
+    padding: 0 6px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    transform: translateY(-2px);
+}
+
+
+article.Pay.other form section > article.conBtn > button#optionSaveBtn,
+article.Pay.other form section > article.conBtn > button#paymentSaveBtn{
+    float: right;
+}
+
+
+
+#dark_div{
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}
+
+
+
+
+/* 양도하기 폼 */
+#giveVoucherFrm{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background-color: #fff;
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 40%);
+}
+#giveVoucherFrm > h2{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+#giveVoucherFrm > h2 > button{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+#giveVoucherFrm > h2 > button > div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#giveVoucherFrm > h2 > button > div > span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#giveVoucherFrm > h2 > button > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#giveVoucherFrm > h2 > button > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+#giveVoucherFrm > .content{
+    width: 100%;
+    height: calc(100% - 46px);
+    padding: 20px;
+}
+#giveVoucherFrm > .content > .manager{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#giveVoucherFrm > .content > .manager label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#giveVoucherFrm > .content > .manager select,
+#giveVoucherFrm > .content > .manager input{
+    width: 120px;
+    height: 30px;
+    border: 1px solid #aaa;
+    padding: 0 5px;
+}
+#giveVoucherFrm > .content > .voucherInfo{
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+#giveVoucherFrm > .content > .voucherInfo::before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 66px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+#giveVoucherFrm > .content > .voucherInfo::after{
+    content: '이용중';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 76px;
+    height: 30px;
+    background-color: var(--mainW);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 13px;
+}
+#giveVoucherFrm > .content > .voucherInfo .giveType{
+    color: var(--mainW);
+    font-weight: 500;
+}
+#giveVoucherFrm > .content > .voucherInfo .giveName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#giveVoucherFrm > .content > .voucherInfo .giveUse{
+    letter-spacing: 1px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo{
+    width: 100%;
+    height: 140px;
+    position: relative;
+    padding-top: 20px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div.left{
+    padding-right: 30px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div.right{
+    padding-left: 30px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: #fff;
+    color: var(--main);
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div > h3{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div > h3 > button{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    background-color: var(--mainW);
+    padding: 4px 10px;
+    letter-spacing: 1px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div > p{
+    padding: 4px 0;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div > p > span.title{
+    display: inline-block;
+    margin-right: 4px;
+}
+#giveVoucherFrm > .content > .changeVoucherInfo > div > p > button{
+    padding: 4px 8px;
+    border: none;
+    color: #fff;
+    background-color: var(--mainW);
+    font-size: 13px;
+}
+#giveVoucherFrm > .content > .notice{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #f00;
+    padding-top: 0px;
+    position: relative;
+    margin-top: 10px;
+    text-decoration: underline;
+    line-height: 30px;
+}
+/* #giveVoucherFrm > .content > .notice::before{
+    content: '';
+    width: 80px;
+    height: 2px;
+    background-color: #f00;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 40px);
+} */
+#giveVoucherFrm > .content > .btn{
+    clear: both;
+    padding: 20px 0 0;
+    margin: 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+#giveVoucherFrm > .content > .btn > button{
+    width: 100px;
+    margin: 0 4px;
+    height: 36px;
+    border: 0;
+    color: #fff;
+}
+#giveVoucherFrm > .content > .btn > button#voucherGiveSubmit{
+    background-color: var(--mainW);
+}
+#giveVoucherFrm > .content > .btn > button.closePop{
+    background-color: var(--gray);
+}
+
+/* 환불하기 폼 */
+#refundVoucherFrm{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background-color: #fff;
+    z-index: 99999;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--mainWW);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 40%);
+}
+#refundVoucherFrm > h2{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-color: var(--mainWW);
+    color: var(--fontW);
+    padding: 10px 12px 11px;
+    position: relative;
+}
+#refundVoucherFrm > h2 > button{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: transparent;
+}
+#refundVoucherFrm > h2 > button > div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#refundVoucherFrm > h2 > button > div > span{
+    width: 90%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#refundVoucherFrm > h2 > button > div > span:first-of-type{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#refundVoucherFrm > h2 > button > div > span:last-of-type{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+#refundVoucherFrm > .content{
+    width: 100%;
+    height: calc(100% - 46px);
+    padding: 20px;
+}
+#refundVoucherFrm > .content > .manager{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#refundVoucherFrm > .content > .manager label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#refundVoucherFrm > .content > .manager select,
+#refundVoucherFrm > .content > .manager input{
+    width: 120px;
+    height: 30px;
+    border: 1px solid #aaa;
+    padding: 0 5px;
+}
+#refundVoucherFrm > .content > .voucherInfo{
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+#refundVoucherFrm > .content > .voucherInfo::before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 66px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+#refundVoucherFrm > .content > .voucherInfo::after{
+    content: '이용중';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 76px;
+    height: 30px;
+    background-color: var(--mainW);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    text-indent: 13px;
+}
+#refundVoucherFrm > .content > .voucherInfo .refundType{
+    color: var(--mainW);
+    font-weight: 500;
+}
+#refundVoucherFrm > .content > .voucherInfo .refundName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#refundVoucherFrm > .content > .voucherInfo .refundUse{
+    letter-spacing: 1px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo{
+    width: 100%;
+    height: 210px;
+    position: relative;
+    padding-top: 20px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div{
+    height: 100%;
+    float: left;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div.left{
+    width: 55%;
+    padding-right: 15px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div.right{
+    width: 45%;
+    padding-left: 30px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div.right label{
+    font-size: 14px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > i{
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: #fff;
+    color: var(--main);
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > h3{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > h3 > button{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    background-color: var(--mainW);
+    padding: 4px 10px;
+    letter-spacing: 1px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > p{
+    padding: 4px 0;
+    /* text-align: center; */
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-indent: 6px;
+    position: relative;
+    z-index: 2;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div.right > p{
+    display: flex;
+    align-items: center;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > p input[type="text"]{
+    width: 108px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    padding: 0 5px;
+    letter-spacing: 1px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > p > span.title{
+    display: inline-block;
+    margin-right: 4px;
+    width: 80px;
+}
+#refundVoucherFrm > .content > .changeVoucherInfo > div > p > button{
+    padding: 4px 8px;
+    border: none;
+    color: #fff;
+    background-color: var(--mainW);
+    font-size: 13px;
+}
+#refundVoucherFrm > .content > .notice{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #f00;
+    padding-top: 0px;
+    position: relative;
+    margin-top: 10px;
+    text-decoration: underline;
+    line-height: 24px;
+}
+/* #refundVoucherFrm > .content > .notice::before{
+    content: '';
+    width: 80px;
+    height: 2px;
+    background-color: #f00;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 40px);
+} */
+#refundVoucherFrm > .content > .btn{
+    clear: both;
+    padding: 20px 0 0;
+    margin: 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+#refundVoucherFrm > .content > .btn > button{
+    width: 100px;
+    margin: 0 4px;
+    height: 36px;
+    border: 0;
+    color: #fff;
+}
+#refundVoucherFrm > .content > .btn > button#voucherRefundSubmit{
+    background-color: var(--mainW);
+}
+#refundVoucherFrm > .content > .btn > button.closePop{
+    background-color: var(--gray);
+}

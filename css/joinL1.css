@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+html{
+    height: auto;
+}
+body{
+    background-color: #fff;
+    background-image: none;
+    position: relative;
+    padding: 0;
+    height: 100%;
+}
+h1{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--main);
+    font-family: 'NanumSquareRoundR';
+}
+h1 > p{
+    font-size: 20px;
+    font-family: inherit;
+    margin-top: 20px;
+}
+
+nav{
+    width: 800px;
+    height: 50px;
+    margin: 50px auto 50px;
+
+}
+nav > ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav > ul > li{
+    width: 25%;
+    height: 100%;
+    padding: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #99999966;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 3px solid #99999966;
+    cursor: default;
+}
+/*  */
+nav > ul > li.active{
+    color: var(--main);
+    border-bottom: 4px solid var(--main);
+}
+/*  */
+nav > ul > li:not(:last-of-type){
+    margin-right: 8px;
+}
+
+form{
+    width: 700px;
+    margin: 0 auto 50px;
+}
+form > div{
+    margin-bottom: 50px;
+}
+form label{
+    font-size: 14px;
+}
+form input{
+    margin-right: 4px;
+}
+form > div > div,
+form > p{
+    display: flex;
+    align-items: center;
+}
+form > p{
+    justify-content: center;
+}
+form > div > label{
+    font-size: 16px;
+    font-family: 'NanumSquareRoundR';
+    font-weight: 600;
+    color: var(--main);
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+form .termsText{
+    width: 100%;
+    height: 250px;
+    border: 1px solid var(--main);
+    resize: none;
+    border-radius: 6px;
+    padding: 10px 8px 8px;
+    overflow: auto;
+    font-size: 14px;
+}
+form .termsText#termsText3{
+    height: 150px;
+}
+div.btnSet{
+    margin: 50px 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.btnSet > button{
+    width: 120px;
+    height: 40px;
+    margin: 0 10px;
+    border: 1px solid var(--main);
+}
+div.btnSet > button#termsYes{
+    background-color: var(--main);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

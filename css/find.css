@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+body{
+    background-color: #fff;
+    background-image: none;
+    position: relative;
+    padding: 0;
+}
+body > h1{
+    text-align: center;
+    padding: 50px 0 30px;
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--main);
+    font-family: 'NanumSquareRoundR';
+}
+body > form{
+    width: 600px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+body > form:first-of-type{
+    border-bottom: 1px solid var(--main);
+}
+body > form > h2{
+    text-align: center;
+    font-size: 20px;
+    font-family: inherit;
+    margin: 40px 0 50px;
+    font-weight: 900;
+    color: var(--main);
+    font-family: 'NanumSquareRoundR';
+}
+body > form > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+body > form > div > label{
+    width: 150px;
+    font-size: 18px;
+    font-weight: 400;
+}
+body > form > div > label+p{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+body > form > div > label+p > label{
+    width: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+input, select{
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    font-size: 15px;
+    color: #777;
+    letter-spacing: 2px;
+    outline: 0;
+    transition: all .1s;
+    border: 1px solid var(--main)       ;
+}
+
+#FIND_ID_BIRTHDAY1{width: 120px;}
+#FIND_ID_BIRTHDAY2{width: 100px;}
+#FIND_ID_BIRTHDAY3{width: 100px;}
+#FIND_PW_BIRTHDAY1{width: 120px;}
+#FIND_PW_BIRTHDAY2{width: 100px;}
+#FIND_PW_BIRTHDAY3{width: 100px;}
+#FIND_PHONE1{width: 120px;}
+#FIND_PHONE2{width: 140px; text-align: center;}
+#FIND_PHONE3{width: 140px; text-align: center;}
+
+div.btnSet{
+    margin-top: 20px;
+    justify-content: center;
+}
+div.btnSet > button{
+    width: 100px;
+    height: 42px;
+    font-size: 14.5px;
+    border: 1px solid var(--main);
+    background-color: var(--main);
+    color: #fff;
+    letter-spacing: 2px;
+}
+form.findPWFrm div.btnSet > button{
+    width: 170px;
+}
+
+form input:focus, form select:focus{
+    border: 2px solid var(--main);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+p.go_login{
+    text-align: center;
+    margin: 30px 0;
+}
+button.go_login{
+    width: 150px;
+    height: 42px;
+    font-size: 14.5px;
+    border: 1px solid var(--main);
+    background-color: #fff;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: .1s;
+}
+button.go_login:hover{
+    color: #fff;
+    background-color: var(--main);
+}
+
+address{
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    transform: translateX(-50%);
+    border-top: 1px solid gray;
+}
