@@ -1,4 +1,4 @@
-var PAYMENT_LIST = [];
+var PAYMENT_LIST = []; 
 var PAYMENT_DETAIL_LIST = [];
 var MEMBER_LIST = [];
 var TRAINER_LIST = [];
